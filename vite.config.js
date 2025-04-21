@@ -3,9 +3,10 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
+  base: '/<fajardo.devfolio>/',
   plugins: [react()],
   build: {
-    outDir: 'docs',      // ← aquí cambiamos de dist/ a docs/
-    emptyOutDir: true,   // limpia docs/ antes de cada build
+    outDir: 'docs',
+    emptyOutDir: true,
   },
 })
