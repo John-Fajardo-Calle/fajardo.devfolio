@@ -6,12 +6,6 @@ export default {
     ],
     darkMode: 'class',
     theme: {
-        screens: {
-            md: '640px', // ahora el menú desktop aparece con ≥640px
-            lg: '1024px',
-            xl: '1280px',
-            '2xl': '1536px',
-        },
         extend: {
             colors: {
                 // Claro
