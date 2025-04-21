@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from './context/ThemeContext'
 // import { LanguageProvider } from './context/LanguageContext'
 import Navbar from './components/Navbar'
@@ -15,15 +15,8 @@ import Contact from './pages/Contact'
 export default function App() {
     return (
         <ThemeProvider>
-            {/* Si más adelante necesitas multilenguaje, reactiva LanguageProvider */}
             {/* <LanguageProvider> */}
-
-            {/*
-          basename debe coincidir con el nombre de tu repo en GitHub Pages,
-          para que React Router genere URLs como:
-          /fajardo.devfolio/, /fajardo.devfolio/projects, etc.
-        */}
-            <Router basename="/fajardo.devfolio">
+            <Router>
                 <Navbar />
 
                 <main className="container mx-auto px-4 py-8">
@@ -34,14 +27,12 @@ export default function App() {
                         <Route path="/projects/:id" element={<ProjectDetail />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/contact" element={<Contact />} />
-                        {/* Opcional: ruta “catch‑all” para 404 */}
                         {/* <Route path="*" element={<NotFound />} /> */}
                     </Routes>
                 </main>
 
                 <Footer />
             </Router>
-
             {/* </LanguageProvider> */}
         </ThemeProvider>
     )
