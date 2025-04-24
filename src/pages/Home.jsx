@@ -1,58 +1,48 @@
-// src/pages/Home.jsx
-import React, { useContext } from 'react'
-import { ThemeContext } from '../context/ThemeContext'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
-    const { theme } = useContext(ThemeContext)
-    const isDark = theme === 'dark'
-
     return (
         <section
-            className={`
+            className="
         flex flex-col items-center justify-center
-        min-h-[80vh] px-4 text-center
-        ${isDark ? 'bg-bgDark text-textLight' : 'bg-bgLight text-textDark'}
-      `}
+        min-h-[calc(100vh-4rem)]   /* 4rem = altura del navbar */
+        text-center
+        bg-gradient-to-br from-bgLight via-white to-teal-50
+        dark:bg-none dark:bg-[#1A2238]
+      "
         >
-            <h1 className="font-heading font-bold text-4xl md:text-6xl mb-4">
-                Hola, soy John Fajardo
+            <h1 className="font-heading text-4xl md:text-5xl mb-4 text-textDark dark:text-textLight">
+                ¡Hola! Soy John Fajardo
             </h1>
 
-            <p
-                className={`
-          font-bodyLong leading-[1.6]
-          text-base md:text-lg mb-6
-          ${isDark ? 'text-opacity-90' : ''}
-        `}
-            >
-                Bienvenido a mi portafolio. Explora mis proyectos y mi currículum.
+            <p className="font-bodyShort text-lg md:text-xl max-w-xl mb-10 text-[#555] dark:text-[#CCCCCC]">
+                Desarrollador backend e Ingeniero Mecatrónico. Explora mis proyectos,
+                mi CV, y descubre cómo combino software y hardware para resolver
+                problemas reales.
             </p>
 
-            <div className="flex gap-4">
-                <a
-                    href="/projects"
-                    className={`
-            font-accent uppercase px-6 py-3 rounded-lg shadow-md
-            transition hover:opacity-90
-            ${isDark
-                        ? 'bg-accentTealLight text-bgDark'
-                        : 'bg-accentTeal text-white'}
-          `}
+            <div className="flex gap-6">
+                <Link
+                    to="/projects"
+                    className="
+            px-6 py-3 rounded-full font-accent
+            bg-accentTeal text-white hover:opacity-90
+            transition
+          "
                 >
                     Ver Proyectos
-                </a>
-                <a
-                    href="/contact"
-                    className={`
-            font-accent uppercase px-6 py-3 rounded-lg shadow-md
-            transition hover:opacity-90
-            ${isDark
-                        ? 'bg-accentGold text-bgDark'
-                        : 'bg-accentCoral text-white'}
-          `}
+                </Link>
+                <Link
+                    to="/contact"
+                    className="
+            px-6 py-3 rounded-full font-accent
+            bg-accentCoral text-white hover:opacity-90
+            transition
+          "
                 >
-                    Contáctame
-                </a>
+                    Hablemos
+                </Link>
             </div>
         </section>
     )
