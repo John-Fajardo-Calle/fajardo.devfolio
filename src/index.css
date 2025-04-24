@@ -48,6 +48,6 @@ body,
         height: 6px;
     }
     .scrollbar-thin::-webkit-scrollbar-thumb {
-        @apply bg-accentTeal/70 rounded;
+        @apply bg-[#4ECDC4]/70 rounded;
     }
 }
