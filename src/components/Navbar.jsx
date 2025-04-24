@@ -1,119 +1,73 @@
-import React, { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-
-const navLinks = [
-    { to: '/', label: 'Inicio' },
-    { to: '/projects', label: 'Proyectos' },
-    { to: '/cv', label: 'CV' },
-    { to: '/about', label: 'Sobre mí' },
-    { to: '/contact', label: 'Contacto' },
-]
+// src/components/Navbar.jsx
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
-    const [open, setOpen] = useState(false)
-    const location = useLocation()
-    const toggle = () => setOpen(!open)
+    const [isOpen, setIsOpen] = useState(false);
+    const { pathname } = useLocation();          // cierra menú al cambiar de ruta
 
-    /* Bloquea el scroll cuando el drawer móvil está abierto */
-    useEffect(() => {
-        document.body.classList.toggle('overflow-hidden', open)
-    }, [open])
+    // Cierra automáticamente el drawer al navegar
+    useEffect(() => setIsOpen(false), [pathname]);
 
-    /* Estilos comunes de los enlaces */
-    const linkClass =
-        'block font-sub hover:text-accentTeal dark:hover:text-accentTealLight transition'
-
-    /* ————————— RENDER ————————— */
     return (
-        <>
-            {/* ░░░ Barra superior SOLO móvil ░░░ */}
-            <header className="md:hidden fixed top-0 inset-x-0 z-50 flex items-center justify-between h-16 px-4 bg-white/80 dark:bg-[#1A2238]/80 backdrop-blur-md shadow">
-                <Link to="/" className="font-heading text-xl" onClick={() => setOpen(false)}>
-                    fajardo.devfolio
+        <header className="fixed inset-x-0 top-0 z-50 bg-white/70 dark:bg-bgDark/70 backdrop-blur-md border-b border-transparent-dark">
+            <div className="mx-auto max-w-6xl px-4 flex items-center h-16">
+                {/*  Branding  */}
+                <Link to="/" className="font-heading text-lg font-bold tracking-wide">
+                    fajardo.<span className="text-accentTeal dark:text-accentTealLight">devfolio</span>
                 </Link>
 
-                {/* Hamburguesa */}
-                <button
-                    onClick={toggle}
-                    aria-label="Menú móvil"
-                    className="flex flex-col items-center justify-center w-8 h-8"
-                >
-          <span
-              className={`w-6 h-0.5 bg-current transition-transform ${
-                  open ? 'rotate-45 translate-y-[5px]' : ''
-              }`}
-          />
-                    <span
-                        className={`w-6 h-0.5 bg-current my-[3px] transition-opacity ${
-                            open ? 'opacity-0' : 'opacity-100'
-                        }`}
-                    />
-                    <span
-                        className={`w-6 h-0.5 bg-current transition-transform ${
-                            open ? '-rotate-45 -translate-y-[5px]' : ''
-                        }`}
-                    />
-                </button>
-            </header>
-
-            {/* ░░░ Sidebar fijo SOLO escritorio ░░░ */}
-            <aside
-                className="
-          hidden md:flex fixed top-0 left-0 z-40 h-full w-60
-          flex-col bg-white dark:bg-[#1A2238] shadow-lg
-        "
-            >
-                <div className="h-16 flex items-center justify-center font-heading text-xl border-b border-black/10 dark:border-white/10">
-                    fajardo.devfolio
-                </div>
-
-                <ul className="flex-1 flex flex-col gap-4 px-6 py-8 list-none">
-                    {navLinks.map(({ to, label }) => (
-                        <li key={to}>
+                {/*  --- Desktop nav ------------------------------------------------ */}
+                <nav className="ml-auto hidden md:flex items-center gap-8 font-sub text-sm">
+                    {["Inicio", "Proyectos", "CV", "Sobre mí", "Contacto"].map(label => {
+                        const to =
+                            label === "Inicio" ? "/" : "/" + label.toLowerCase().replace(" ", "");
+                        return (
                             <Link
+                                key={label}
                                 to={to}
-                                className={
-                                    linkClass +
-                                    (location.pathname === to
-                                        ? ' text-accentTeal dark:text-accentTealLight'
-                                        : '')
-                                }
-                            >
+                                className="relative after:absolute after:inset-x-0 after:-bottom-1
+                           after:h-0.5 after:scale-x-0 after:bg-accentTeal
+                           after:transition-transform hover:after:scale-x-100">
                                 {label}
                             </Link>
-                        </li>
-                    ))}
-                </ul>
-            </aside>
+                        );
+                    })}
+                </nav>
 
-            {/* ░░░ Drawer móvil ░░░ */}
-            {/* Overlay */}
-            {open && (
-                <div
-                    onClick={toggle}
-                    className="fixed inset-0 bg-black/40 backdrop-blur-sm md:hidden z-40"
-                />
-            )}
+                {/*  --- Hamburger -------------------------------------------------- */}
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="ml-auto md:hidden p-2 focus:outline-none"
+                    aria-label="Abrir menú">
+                    <div className={`h-0.5 w-6 bg-current transition-all
+                           ${isOpen ? "rotate-45 translate-y-1" : ""}`} />
+                    <div className={`h-0.5 w-6 bg-current my-1 transition-opacity
+                           ${isOpen ? "opacity-0" : ""}`} />
+                    <div className={`h-0.5 w-6 bg-current transition-all
+                           ${isOpen ? "-rotate-45 -translate-y-1" : ""}`} />
+                </button>
+            </div>
 
-            {/* Drawer panel */}
+            {/* --- Mobile drawer ----------------------------------------------- */}
             <nav
-                className={`
-          fixed top-0 right-0 h-full w-64 md:hidden z-50
-          bg-white dark:bg-[#1A2238] shadow-lg
-          transition-transform duration-300
-          ${open ? 'translate-x-0' : 'translate-x-full'}
-        `}
-            >
-                <ul className="mt-20 flex flex-col gap-6 px-6 list-none marker:none">
-                    {navLinks.map(({ to, label }) => (
-                        <li key={to}>
-                            <Link to={to} onClick={toggle} className={linkClass + ' text-lg'}>
-                                {label}
-                            </Link>
-                        </li>
-                    ))}
+                className={`md:hidden bg-white dark:bg-bgDark border-t dark:border-gray-700
+                    transition-transform duration-300
+                    ${isOpen ? "translate-y-0" : "-translate-y-full"}`}>
+                <ul className="flex flex-col items-center py-6 space-y-4 font-sub text-base">
+                    {["Inicio", "Proyectos", "CV", "Sobre mí", "Contacto"].map(label => {
+                        const to =
+                            label === "Inicio" ? "/" : "/" + label.toLowerCase().replace(" ", "");
+                        return (
+                            <li key={label}>
+                                <Link to={to} className="hover:text-accentTeal">
+                                    {label}
+                                </Link>
+                            </li>
+                        );
+                    })}
                 </ul>
             </nav>
-        </>
-    )
+        </header>
+    );
 }
