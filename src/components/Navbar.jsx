@@ -1,71 +1,68 @@
-// src/components/Navbar.jsx
-import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
-    const { pathname } = useLocation();          // cierra menú al cambiar de ruta
+    const [open, setOpen] = useState(false);
 
-    // Cierra automáticamente el drawer al navegar
-    useEffect(() => setIsOpen(false), [pathname]);
+    const links = [
+        { to: '/', label: 'Inicio' },
+        { to: '/projects', label: 'Proyectos' },
+        { to: '/cv', label: 'CV' },
+        { to: '/about', label: 'Sobre mí' },
+        { to: '/contact', label: 'Contacto' },
+    ];
 
     return (
-        <header className="fixed inset-x-0 top-0 z-50 bg-white/70 dark:bg-bgDark/70 backdrop-blur-md border-b border-transparent-dark">
-            <div className="mx-auto max-w-6xl px-4 flex items-center h-16">
-                {/*  Branding  */}
-                <Link to="/" className="font-heading text-lg font-bold tracking-wide">
-                    fajardo.<span className="text-accentTeal dark:text-accentTealLight">devfolio</span>
+        <header className="sticky top-0 z-50 backdrop-blur bg-white/60 dark:bg-bgDark/60 border-b border-black/5 dark:border-white/10">
+            <div className="max-w-7xl mx-auto flex items-center h-16 px-4">
+                {/* logo */}
+                <Link to="/" className="font-heading text-lg md:text-xl">
+                    fajardo.<span className="font-bold">devfolio</span>
                 </Link>
 
-                {/*  --- Desktop nav ------------------------------------------------ */}
-                <nav className="ml-auto hidden md:flex items-center gap-8 font-sub text-sm">
-                    {["Inicio", "Proyectos", "CV", "Sobre mí", "Contacto"].map(label => {
-                        const to =
-                            label === "Inicio" ? "/" : "/" + label.toLowerCase().replace(" ", "");
-                        return (
-                            <Link
-                                key={label}
-                                to={to}
-                                className="relative after:absolute after:inset-x-0 after:-bottom-1
-                           after:h-0.5 after:scale-x-0 after:bg-accentTeal
-                           after:transition-transform hover:after:scale-x-100">
-                                {label}
-                            </Link>
-                        );
-                    })}
+                {/* Desktop menu */}
+                <nav className="ml-auto hidden md:flex items-center gap-8 font-sub">
+                    {links.map(l => (
+                        <Link
+                            key={l.to}
+                            to={l.to}
+                            className="hover:text-accentTeal dark:hover:text-accentTealLight transition"
+                        >
+                            {l.label}
+                        </Link>
+                    ))}
                 </nav>
 
-                {/*  --- Hamburger -------------------------------------------------- */}
+                {/* Hamburger */}
                 <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="ml-auto md:hidden p-2 focus:outline-none"
-                    aria-label="Abrir menú">
-                    <div className={`h-0.5 w-6 bg-current transition-all
-                           ${isOpen ? "rotate-45 translate-y-1" : ""}`} />
-                    <div className={`h-0.5 w-6 bg-current my-1 transition-opacity
-                           ${isOpen ? "opacity-0" : ""}`} />
-                    <div className={`h-0.5 w-6 bg-current transition-all
-                           ${isOpen ? "-rotate-45 -translate-y-1" : ""}`} />
+                    onClick={() => setOpen(!open)}
+                    className="ml-auto md:hidden flex flex-col justify-center gap-1 w-8 h-8"
+                    aria-label="Abrir menú"
+                >
+                    <span className={`h-0.5 bg-current transition ${open && 'rotate-45 translate-y-1'}`} />
+                    <span className={`h-0.5 bg-current transition ${open ? 'opacity-0' : 'opacity-100'}`} />
+                    <span className={`h-0.5 bg-current transition ${open && '-rotate-45 -translate-y-1'}`} />
                 </button>
             </div>
 
-            {/* --- Mobile drawer ----------------------------------------------- */}
+            {/* Mobile drawer */}
             <nav
-                className={`md:hidden bg-white dark:bg-bgDark border-t dark:border-gray-700
-                    transition-transform duration-300
-                    ${isOpen ? "translate-y-0" : "-translate-y-full"}`}>
-                <ul className="flex flex-col items-center py-6 space-y-4 font-sub text-base">
-                    {["Inicio", "Proyectos", "CV", "Sobre mí", "Contacto"].map(label => {
-                        const to =
-                            label === "Inicio" ? "/" : "/" + label.toLowerCase().replace(" ", "");
-                        return (
-                            <li key={label}>
-                                <Link to={to} className="hover:text-accentTeal">
-                                    {label}
-                                </Link>
-                            </li>
-                        );
-                    })}
+                className={`md:hidden bg-white dark:bg-bgDark transition-transform duration-300 ${
+                    open ? 'translate-y-0' : '-translate-y-full'
+                }`}
+            >
+                <ul className="flex flex-col items-center py-6 space-y-4 font-sub">
+                    {links.map(l => (
+                        <li key={l.to}>
+                            <Link
+                                to={l.to}
+                                onClick={() => setOpen(false)}
+                                className="text-lg hover:text-accentTeal dark:hover:text-accentTealLight"
+                            >
+                                {l.label}
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
             </nav>
         </header>

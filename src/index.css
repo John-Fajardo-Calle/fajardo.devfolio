@@ -1,7 +1,53 @@
+/* ────────────────────────────────
+   1. Cargar el CSS generado por Tailwind
+   ──────────────────────────────── */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+/* ────────────────────────────────
+   2. Ajustes globales
+   ──────────────────────────────── */
+
+/* Evitar scroll horizontal accidental */
+html,
+body {
     overflow-x: hidden;
+}
+
+/* Garantizar que el contenedor raíz ocupe toda la altura */
+html,
+body,
+#root {
+    min-height: 100%;
+}
+
+/* ────────────────────────────────
+   3. Estilos personalizados con @apply
+   (deben ir dentro de un @layer)
+   ──────────────────────────────── */
+
+@layer base {
+    a {
+        /* Color teal #4ECDC4 al 100 % */
+        @apply outline-none focus-visible:ring-2 ring-[#4ECDC4];
+    }
+}
+
+/* ────────────────────────────────
+   4. (Opcional) Adaptar scrollbars oscuras
+   ──────────────────────────────── */
+
+@layer utilities {
+    .scrollbar-thin {
+        scrollbar-width: thin;               /* Firefox */
+    }
+    .scrollbar-thin::-webkit-scrollbar {
+        width: 6px;                          /* Chrome/Edge */
+        height: 6px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+        @apply bg-accentTeal/70 rounded;
+    }
 }
