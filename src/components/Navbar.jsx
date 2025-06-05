@@ -21,7 +21,7 @@ const Navbar = () => {
     ];
 
     const logoFilename = "fajardo.devfolio_copia.ico";
-    const logoSrc = `<span class="math-inline">\{import\.meta\.env\.BASE\_URL\}</span>{logoFilename}`;
+    const logoSrc = `${import.meta.env.BASE_URL}${logoFilename}`;
 
     return (
         <nav className="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 transition-colors duration-300">
@@ -30,13 +30,14 @@ const Navbar = () => {
                     <div className="flex-shrink-0">
                         <Link to="/" className="flex items-center" aria-label="Página de inicio">
                             <img
-                                src="src/fajardo.devfolio_copia.ico"
+                                src={logoSrc} // <--- USA LA VARIABLE CORREGIDA AQUÍ
                                 alt={t('navbar.logoAlt', 'Logo de fajardo.devfolio')}
                                 style={{ height: '55px', width: 'auto' }}
                             />
                         </Link>
                     </div>
 
+                    {/* El resto de tu Navbar (enlaces, controles, menú móvil) permanece igual */}
                     <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 items-center space-x-8">
                         {navLinksData.map((linkInfo) => (
                             <NavLink
@@ -55,17 +56,12 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    {/* Sección Derecha: Controles (Idioma, Tema) y Menú Móvil */}
-                    {/* Este div se asegura que los controles estén a la derecha.
-                        Como el central es absoluto, este necesita estar en el flujo normal.
-                        'justify-between' en el padre los separará (logo a la izquierda, este a la derecha) */}
                     <div className="flex items-center">
-                        <div className="hidden md:flex md:items-center md:space-x-4"> {/* Eliminado ml-6 para que no haya doble margen */}
+                        <div className="hidden md:flex md:items-center md:space-x-4">
                             <LanguageSwitcher />
                             <ThemeToggle />
                         </div>
-
-                        <div className="md:hidden flex items-center ml-4"> {/* ml-4 aquí está bien para separar del borde en móvil */}
+                        <div className="md:hidden flex items-center ml-4">
                             <button
                                 onClick={toggleMobileMenu}
                                 type="button"
@@ -86,6 +82,7 @@ const Navbar = () => {
                 </div>
             </div>
 
+            {/* Menú Desplegable Móvil (tu código existente) */}
             {isMobileMenuOpen && (
                 <div className="md:hidden border-t border-gray-200 dark:border-gray-700" id="mobile-menu">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
