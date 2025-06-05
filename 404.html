@@ -4,19 +4,17 @@
   <meta charset="utf-8">
   <title>fajardo.devfolio - Redirigiendo...</title>
   <script type="text/javascript">
-    var repoName = "fajardo.devfolio"; // Nombre exacto de tu repositorio
-    var fullPath = window.location.pathname + window.location.search + window.location.hash;
-    sessionStorage.redirect = fullPath;
-    var baseRedirectTo = window.location.origin + "/" + repoName + "/";
-    window.location.replace(baseRedirectTo);
+    var basePath = "/fajardo.devfolio/";
+    sessionStorage.redirect = window.location.pathname + window.location.search + window.location.hash;
+
+    window.location.replace(window.location.origin + basePath);
   </script>
 </head>
 <body>
 <p>Si no eres redirigido automáticamente, por favor <a id="redirect-link-404" href="#">haz clic aquí para ir a la página principal</a>.</p>
 <script type="text/javascript">
-  var repoNameForLink = "fajardo.devfolio"; // Nombre exacto de tu repositorio
-  var fallbackLink = window.location.origin + "/" + repoNameForLink + "/";
-  document.getElementById('redirect-link-404').href = fallbackLink;
+  var basePathForLink = "/fajardo.devfolio/";
+  document.getElementById('redirect-link-404').href = window.location.origin + basePathForLink;
 </script>
 </body>
 </html>

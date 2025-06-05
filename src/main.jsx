@@ -6,19 +6,12 @@ import { ThemeProvider } from './context/ThemeContext';
 import './i18n';
 
 (function () {
-    const redirectPath = sessionStorage.getItem('redirect');
-
-    if (redirectPath) {
+    const originalPath = sessionStorage.getItem('redirect');
+    if (originalPath) {
         sessionStorage.removeItem('redirect');
-        const base = import.meta.env.BASE_URL;
-
-
-        const newPath = base + (redirectPath === '/' ? '' : (redirectPath.startsWith('/') ? redirectPath.substring(1) : redirectPath));
-
-
-        if (newPath !== (window.location.pathname + window.location.search + window.location.hash) ) {
-            window.history.replaceState(null, null, newPath);
-        } else {
+        if (originalPath !== (window.location.pathname + window.location.search + window.location.hash)) {
+            window.history.replaceState(null, null, originalPath);
+            console.log("SPA Redirect: Restored path to", originalPath);
         }
     }
 })();
