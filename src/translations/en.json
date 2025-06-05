@@ -1,0 +1,184 @@
+{
+  "navbar": {
+    "home": "Home",
+    "cv": "CV",
+    "projects": "Projects",
+    "about": "About Me",
+    "contact": "Contact"
+  },
+  "home": {
+    "greeting": "Hi, I'm John Fajardo",
+    "introduction": "Backend Developer and Mechatronics Engineer.",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me"
+  },
+  "cv": {
+    "title": "Curriculum Vitae",
+    "downloadES": "Download CV in Spanish",
+    "downloadEN": "Download CV in English",
+    "sections": {
+      "experience": "Professional Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "certificates": "Certificates and Courses",
+      "languages": "Languages"
+    },
+    "experience": {
+      "job1": {
+        "title": "Backend Developer - Hackathon #1",
+        "company": "Sparky AI System (UTEC)",
+        "date": "Apr 2025 – May 2025",
+        "location": "Lima, Peru",
+        "desc1": "Developed backend logic in Spring Boot for AI model management system.",
+        "desc2": "Created secure controllers with JWT authentication and role-based access.",
+        "desc3": "Designed RESTful APIs for user, restriction, and company management."
+      },
+      "job2": {
+        "title": "Academic Assistant and STEM Tutor",
+        "company": "Freelance",
+        "date": "2024 – Present",
+        "location": "Remote",
+        "desc1": "Private tutoring in physics, mathematics, programming, and thermodynamics.",
+        "desc2": "Created study guides, formula sheets, and educational resources."
+      }
+    },
+    "education": {
+      "degree1": {
+        "title": "Bachelor’s in Mechatronics Engineering",
+        "institution": "University of Engineering and Technology (UTEC)",
+        "date": "2024 – Present",
+        "location": "Lima, Peru",
+        "desc": "Studies focused on electronics, programming, automation, and system design."
+      },
+      "degree2": {
+        "title": "Backend Programming Certification (upcoming)",
+        "institution": "EBAC (British School of Creative Arts and Technology)",
+        "date": "Starting in 2025",
+        "location": "Online",
+        "desc": "Training in modern backend technologies, APIs, databases, and software architecture."
+      }
+    },
+    "skills": {
+      "programming": {
+        "title": "Programming Languages",
+        "levelAdvanced": "Advanced: Python, R, MATLAB",
+        "levelIntermediate": "Intermediate: Java, C++, SQL, C"
+      },
+      "backend": {
+        "title": "Backend Development",
+        "list": ["Spring Boot", "REST APIs", "Secure controllers", "Validations", "DTOs"]
+      },
+      "databases": {
+        "title": "Databases",
+        "list": ["PostgreSQL", "MySQL", "MongoDB (basic)"]
+      },
+      "tools": {
+        "title": "Tools & Technologies",
+        "list": ["Git", "IntelliJ IDEA", "Visual Studio Code", "Docker (basic)", "Arduino/ESP32"]
+      }
+    },
+    "certificates": {
+      "cert1": {
+        "title": "R Programming for Applied Statistics",
+        "issuer": "UTEC",
+        "date": "April 2025",
+        "desc": "Data manipulation, visualization, regression, and statistical analysis in R."
+      },
+      "cert2": {
+        "title": "Outstanding Participant - Sparky AI System Hackathon",
+        "issuer": "UTEC",
+        "date": "May 2025",
+        "desc": "Recognized for robust and functional backend solutions with Java Spring."
+      }
+    },
+    "languages": {
+      "lang1": {
+        "name": "Spanish",
+        "level": "Native"
+      },
+      "lang2": {
+        "name": "English",
+        "level": "Advanced (C1)"
+      }
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "filterAll": "All",
+    "filterTitle": "Filter by category:",
+    "filterIntegrations": "Integrations",
+    "filterProgrammingLanguages": "Programming Languages",
+    "noProjectsToDisplay": "No projects match the selected filters.",
+    "filterAllIntegrations": "All Integrations",
+    "integrationsWith": "Integrations with {{lang}}",
+    "activeFilters": "Active filters:",
+    "removeFilter": "Remove filter {{filter}}",
+    "loadingProject": "Loading project...",
+    "notFoundTitle": "Project Not Found",
+    "notFoundMessage": "Sorry, the project you are looking for does not exist or is not available.",
+    "backToProjects": "Back to Projects",
+    "backToPrevious": "Back",
+    "mainImageAlt": "Main image for project {{title}}",
+    "descriptionTitle": "Project Description",
+    "galleryTitle": "Image Gallery",
+    "galleryImageAlt": "Image {{index}} from project gallery for {{title}}",
+    "technologiesUsedTitle": "Technologies Used",
+    "linksTitle": "Links",
+    "repository": "Repository",
+    "liveDemo": "Live Demo"
+  },
+  "about": {
+    "pageTitle": "About Me",
+    "introSectionTitle": "A Passion for Technology and Engineering",
+    "introParagraph1": "Ever since I was a kid, I was fascinated by how things work. I used to take devices apart just to understand the logic behind each mechanism. That curiosity evolved into a clear calling: to build solutions that blend engineering, software, and creativity.",
+    "introParagraph2": "Studying Mechatronics Engineering gave me a solid foundation in mechanical, electronic, and control systems. Over time, I developed a deep passion for software development and specialized as a Backend Developer, where I enjoy building the robust and efficient logic behind modern digital platforms.",
+    "journeySectionTitle": "A Learning-Driven Journey",
+    "journeyParagraph1": "Throughout my career, I’ve worked on challenging projects ranging from industrial automation to complex web platforms. Each experience has sharpened my problem-solving skills and strengthened my ability to collaborate in multidisciplinary teams with a focus on quality and continuous improvement.",
+    "philosophySectionTitle": "My Work Philosophy",
+    "philosophyParagraph1": "I believe in the transformative power of technology and the importance of lifelong learning. I approach every challenge with a mindset focused on clean, scalable solutions that bring real value. Efficiency, clarity, and a strong work ethic guide everything I do.",
+    "connectSectionTitle": "Let's Connect",
+    "connectParagraph": "Interested in what I do? Have a project or idea in mind? I’d love to hear from you. I’m always open to collaboration, learning, and building something meaningful together.",
+    "linkedinLinkText": "LinkedIn",
+    "githubLinkText": "GitHub",
+    "profileImageAlt": "Photo of John Fajardo"
+  },
+  "contact": {
+    "pageTitle": "Contact",
+    "introText": "Let's talk! If you have any questions, proposals, or just want to say hello, feel free to send me a message through the form or contact me directly via WhatsApp.",
+    "formSectionTitle": "Send Me a Message",
+    "whatsappButtonText": "Contact via WhatsApp",
+    "whatsappMessageDefault": "Hi John, I visited your portfolio and I'd like to get in touch.",
+    "formPlaceholder": "The contact form will be available here soon.",
+    "form": {
+      "nameLabel": "Full Name",
+      "namePlaceholder": "e.g., John Fajardo",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "you@example.com",
+      "messageLabel": "Your Message",
+      "messagePlaceholder": "Type your question or proposal here...",
+      "sendButton": "Send Message",
+      "sendingButton": "Sending...",
+      "successMessage": "Message sent successfully! Thank you for reaching out.",
+      "errorMessage": "There was an error sending your message. Please try again or contact me via WhatsApp.",
+      "errors": {
+        "nameRequired": "Name is required.",
+        "emailRequired": "Email address is required.",
+        "emailInvalid": "Invalid email format.",
+        "messageRequired": "Message is required."
+      }
+    }
+  },
+  "footer": {
+    "madeWith": "Made with React, TailwindCSS and ❤️ by John Fajardo.",
+    "rightsReserved": "All rights reserved."
+  },
+  "theme": {
+    "toggleLight": "Switch to light mode",
+    "toggleDark": "Switch to dark mode"
+  },
+  "language": {
+    "es": "Spanish",
+    "en": "English",
+    "switchTo": "Switch to {{lng}}"
+  }
+}

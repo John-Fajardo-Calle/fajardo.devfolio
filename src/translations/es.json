@@ -1,0 +1,184 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "cv": "CV",
+    "projects": "Proyectos",
+    "about": "Acerca de Mí",
+    "contact": "Contacto"
+  },
+  "home": {
+    "greeting": "Hola, soy John Fajardo",
+    "introduction": "Desarrollador Backend e Ingeniero Mecatrónico.",
+    "viewProjects": "Ver Proyectos",
+    "contactMe": "Contáctame"
+  },
+  "cv": {
+    "title": "Currículum Vitae",
+    "downloadES": "Descargar CV en Español",
+    "downloadEN": "Descargar CV en Inglés",
+    "sections": {
+      "experience": "Experiencia Profesional",
+      "education": "Educación",
+      "skills": "Habilidades",
+      "certificates": "Certificados y Cursos",
+      "languages": "Idiomas"
+    },
+    "experience": {
+      "job1": {
+        "title": "Desarrollador Backend - Hackathon #1",
+        "company": "Sparky AI System (UTEC)",
+        "date": "Abr 2025 - May 2025",
+        "location": "Lima, Perú",
+        "desc1": "Implementación de lógica backend en Spring Boot para gestión de modelos de IA.",
+        "desc2": "Desarrollo de controladores seguros con autenticación JWT y control de acceso basado en roles.",
+        "desc3": "Diseño de endpoints RESTful para administración de usuarios, restricciones y empresas."
+      },
+      "job2": {
+        "title": "Asistente Académico y Tutor STEM",
+        "company": "Independiente",
+        "date": "2024 - Actualidad",
+        "location": "Remoto",
+        "desc1": "Tutorías personalizadas en física, matemáticas, programación y termodinámica para estudiantes universitarios.",
+        "desc2": "Desarrollo de recursos didácticos, hojas de fórmulas y guías de estudio."
+      }
+    },
+    "education": {
+      "degree1": {
+        "title": "Ingeniería Mecatrónica",
+        "institution": "Universidad de Ingeniería y Tecnología (UTEC)",
+        "date": "2024 - Actualidad",
+        "location": "Lima, Perú",
+        "desc": "Estudios enfocados en electrónica, programación, automatización y diseño de sistemas."
+      },
+      "degree2": {
+        "title": "Certificación Profesional en Programación Backend (en curso)",
+        "institution": "EBAC (Escuela Británica de Artes Creativas y Tecnología)",
+        "date": "Por iniciar en 2025",
+        "location": "Online",
+        "desc": "Enfocado en tecnologías backend modernas, APIs, bases de datos y arquitectura de software."
+      }
+    },
+    "skills": {
+      "programming": {
+        "title": "Lenguajes de Programación",
+        "levelAdvanced": "Avanzado: Python, R, MATLAB",
+        "levelIntermediate": "Intermedio: Java, C++, SQL, C"
+      },
+      "backend": {
+        "title": "Desarrollo Backend",
+        "list": ["Spring Boot", "APIs REST", "Controladores con seguridad", "Validaciones", "DTOs"]
+      },
+      "databases": {
+        "title": "Bases de Datos",
+        "list": ["PostgreSQL", "MySQL", "MongoDB (básico)"]
+      },
+      "tools": {
+        "title": "Herramientas y Tecnologías",
+        "list": ["Git", "IntelliJ IDEA", "Visual Studio Code", "Docker (básico)", "Arduino/ESP32"]
+      }
+    },
+    "certificates": {
+      "cert1": {
+        "title": "Curso de Programación en R para Estadística Aplicada",
+        "issuer": "UTEC",
+        "date": "Abril 2025",
+        "desc": "Manipulación de datos, visualización, regresión y análisis estadístico en R."
+      },
+      "cert2": {
+        "title": "Participante Destacado - Hackathon Sparky AI System",
+        "issuer": "UTEC",
+        "date": "Mayo 2025",
+        "desc": "Reconocimiento por soluciones funcionales y robustas en backend con Java Spring."
+      }
+    },
+    "languages": {
+      "lang1": {
+        "name": "Español",
+        "level": "Nativo"
+      },
+      "lang2": {
+        "name": "Inglés",
+        "level": "Avanzado (C1)"
+      }
+    }
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "filterAll": "Todos",
+    "filterTitle": "Filtrar por categoría:",
+    "filterIntegrations": "Integraciones",
+    "filterProgrammingLanguages": "Lenguajes de Programación",
+    "noProjectsToDisplay": "No hay proyectos que coincidan con los filtros seleccionados.",
+    "filterAllIntegrations": "Todas las Integraciones",
+    "integrationsWith": "Integraciones con {{lang}}",
+    "activeFilters": "Filtros activos:",
+    "removeFilter": "Quitar filtro {{filter}}",
+    "loadingProject": "Cargando proyecto...",
+    "notFoundTitle": "Proyecto no Encontrado",
+    "notFoundMessage": "Lo sentimos, el proyecto que buscas no existe o no está disponible.",
+    "backToProjects": "Volver a Proyectos",
+    "backToPrevious": "Volver",
+    "mainImageAlt": "Imagen principal del proyecto {{title}}",
+    "descriptionTitle": "Descripción del Proyecto",
+    "galleryTitle": "Galería de Imágenes",
+    "galleryImageAlt": "Imagen {{index}} de la galería del proyecto {{title}}",
+    "technologiesUsedTitle": "Tecnologías Utilizadas",
+    "linksTitle": "Enlaces",
+    "repository": "Repositorio",
+    "liveDemo": "Demo en Vivo"
+  },
+  "about": {
+    "pageTitle": "Acerca de Mí",
+    "introSectionTitle": "Pasión por la Tecnología y la Ingeniería",
+    "introParagraph1": "Desde muy joven, me cautivó descubrir cómo funcionan las cosas. Solía desmontar aparatos solo para entender la lógica detrás de cada mecanismo. Esa curiosidad innata se transformó en una vocación clara: construir soluciones que integren ingeniería, software y creatividad.",
+    "introParagraph2": "Estudiar Ingeniería Mecatrónica me dio una base sólida en sistemas mecánicos, electrónicos y de control. Con el tiempo, desarrollé una pasión por el desarrollo de software, especializándome como Backend Developer, donde disfruto diseñando la lógica robusta y eficiente que impulsa plataformas y servicios digitales.",
+    "journeySectionTitle": "Un Recorrido Impulsado por el Aprendizaje",
+    "journeyParagraph1": "He participado en proyectos desafiantes que van desde la automatización industrial hasta el desarrollo de plataformas web. Cada experiencia ha fortalecido mi capacidad para resolver problemas complejos y colaborar en equipos multidisciplinarios, siempre con un enfoque en la calidad y la mejora continua.",
+    "philosophySectionTitle": "Filosofía de Trabajo",
+    "philosophyParagraph1": "Creo en el poder transformador de la tecnología y en el valor del aprendizaje constante. En cada desafío, busco soluciones limpias, escalables y que aporten verdadero valor. Me guío por la eficiencia, la claridad y una ética de trabajo rigurosa.",
+    "connectSectionTitle": "Conectemos",
+    "connectParagraph": "¿Te interesa lo que hago? ¿Tienes una idea o proyecto en mente? Será un placer conversar contigo. Estoy siempre abierto a colaborar, aprender y construir algo significativo juntos.",
+    "linkedinLinkText": "LinkedIn",
+    "githubLinkText": "GitHub",
+    "profileImageAlt": "Foto de John Fajardo"
+  },
+  "contact": {
+    "pageTitle": "Contacto",
+    "introText": "¡Hablemos! Si tienes alguna pregunta, propuesta o simplemente quieres saludar, no dudes en enviarme un mensaje a través del formulario o contactarme directamente por WhatsApp.",
+    "formSectionTitle": "Envíame un Mensaje",
+    "whatsappButtonText": "Contactar por WhatsApp",
+    "whatsappMessageDefault": "Hola John, he visitado tu portafolio y me gustaría ponerme en contacto contigo.",
+    "formPlaceholder": "El formulario de contacto irá aquí pronto.",
+    "form": {
+      "nameLabel": "Nombre Completo",
+      "namePlaceholder": "Ej: John Fajardo",
+      "emailLabel": "Correo Electrónico",
+      "emailPlaceholder": "tu@correo.com",
+      "messageLabel": "Tu Mensaje",
+      "messagePlaceholder": "Escribe aquí tu consulta o propuesta...",
+      "sendButton": "Enviar Mensaje",
+      "sendingButton": "Enviando...",
+      "successMessage": "¡Mensaje enviado con éxito! Gracias por contactarme.",
+      "errorMessage": "Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o contáctame por WhatsApp.",
+      "errors": {
+        "nameRequired": "El nombre es obligatorio.",
+        "emailRequired": "El correo electrónico es obligatorio.",
+        "emailInvalid": "El formato del correo no es válido.",
+        "messageRequired": "El mensaje es obligatorio."
+      }
+    }
+  },
+  "footer": {
+    "madeWith": "Hecho con React, TailwindCSS y ❤️ por John Fajardo.",
+    "rightsReserved": "Todos los derechos reservados."
+  },
+  "theme": {
+    "toggleLight": "Cambiar a modo claro",
+    "toggleDark": "Cambiar a modo oscuro"
+  },
+  "language": {
+    "es": "Español",
+    "en": "Inglés",
+    "switchTo": "Cambiar a {{lng}}"
+  }
+}

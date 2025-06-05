@@ -1,0 +1,598 @@
+[
+  {
+    "id": "motor-db-ligero-cpp",
+    "title": "Motor de Base de Datos Ligero en C++",
+    "category": "C++",
+    "projectType": "single_language",
+    "languages": ["C++"],
+    "thumbnailUrl": "/assets/thumbnails/motor-db-ligero-cpp-thumb.jpg",
+    "shortDescription": "Desarrollo de un motor de base de datos simplificado en C++ puro, con estructuras de datos eficientes (árbol B+), gestión manual de memoria y concurrencia para múltiples consultas.",
+    "longDescription": [
+      "Desarrollo de un motor de base de datos simplificado escrito en C++ puro para demostrar capacidades de backend avanzadas. Incluye la implementación de estructuras de datos eficientes (como un índice tipo árbol B+ para acelerar consultas) y gestión manual de memoria para el almacenamiento de registros.",
+      "El proyecto maneja concurrencia con hilos (multithreading) para permitir múltiples consultas simultáneas, garantizando la integridad de datos con bloqueos mínimos.",
+      "Este proyecto enfatiza buenas prácticas de C++ (uso de RAII y punteros inteligentes) y algoritmos optimizados para búsquedas y almacenamiento, mostrando un dominio profundo del lenguaje más allá de entornos embebidos.",
+      "Objetivo Técnico: Construir un motor de base de datos optimizado para demostrar competencias en desarrollo backend y estructuras de datos avanzadas.",
+      "La documentación técnica detalla la arquitectura del motor, incluyendo diagramas UML y ejemplos de consultas, y se pueden incluir análisis de rendimiento."
+    ],
+    "technologies": ["C++17", "STL", "Multihilo", "Árbol B+", "Gestión de Memoria Manual", "fstream", "RAII", "Punteros Inteligentes"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "robot-autoequilibrado-cpp",
+    "title": "Robot autoequilibrado de dos ruedas",
+    "category": "Robótica con C++",
+    "projectType": "single_language",
+    "languages": ["C++"],
+    "thumbnailUrl": "/assets/thumbnails/robot-autoequilibrado-cpp-thumb.jpg",
+    "shortDescription": "Robot tipo Segway que se mantiene vertical sobre dos ruedas mediante un algoritmo de control PID en C++ embebido en Arduino, utilizando un sensor IMU (MPU-6050).",
+    "longDescription": [
+      "Un robot de tipo segway que se mantiene vertical sobre dos ruedas mediante un algoritmo de control en C++ embebido.",
+      "Este proyecto involucra un sensor IMU (MPU-6050) para medir la inclinación y un control PID en Arduino que mueve los motores para equilibrar el robot.",
+      "Objetivos técnicos: dominar conceptos de control de sistemas inestables (péndulo invertido) implementados en C++, procesamiento de señales del acelerómetro/giroscopio y control de motores en tiempo real.",
+      "La visualización principal es un video del robot en acción, complementado con gráficas de rendimiento del controlador.",
+      "Este proyecto resalta habilidades de control automático y programación de microcontroladores a un nivel avanzado."
+    ],
+    "technologies": ["Arduino Pro Mini (C++)", "MPU-6050", "Control PID", "Driver Motores", "Procesamiento de Señales"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "brazo-robotico-arduino-cpp",
+    "title": "Brazo robótico controlado con Arduino",
+    "category": "Robótica con C++",
+    "projectType": "single_language",
+    "languages": ["C++"],
+    "thumbnailUrl": "/assets/thumbnails/brazo-robotico-arduino-cpp-thumb.jpg",
+    "shortDescription": "Construcción de un brazo robótico de 3-6 grados de libertad usando servomotores controlados por un Arduino en C++, con manejo de cinemática básica.",
+    "longDescription": [
+      "Construir un brazo robótico de 3-6 grados de libertad usando servomotores controlados por un Arduino en C++. El código C++ se encarga de mover cada articulación a ángulos programados para lograr posiciones deseadas.",
+      "Objetivos técnicos: demostrar cinemática directa (y potencialmente inversa) básica calculada en C++ para coordinar los movimientos, manejo de múltiples servos con señales PWM, y lectura de entradas (por ejemplo, un joystick o potenciómetros para controlar manualmente el brazo).",
+      "Se pueden incluir videos del brazo realizando tareas, diagramas de circuito y simulaciones en Proteus.",
+      "Este proyecto permite evidenciar conocimientos de electrónica, control de motores y programación estructurada en un contexto de robótica."
+    ],
+    "technologies": ["Arduino Uno (C++)", "Servomotores", "PWM", "Potenciómetros", "Cinemática de Robots", "Proteus (simulación)"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "simulador-mecatronico-cpp",
+    "title": "Simulador de Sistema Mecatrónico en C++",
+    "category": "Simulación con C++",
+    "projectType": "single_language",
+    "languages": ["C++"],
+    "thumbnailUrl": "/assets/thumbnails/simulador-mecatronico-cpp-thumb.jpg",
+    "shortDescription": "Simulador en C++ de un sistema de control mecánico complejo (ej. péndulo invertido), resolviendo ecuaciones diferenciales en tiempo real con algoritmos numéricos optimizados.",
+    "longDescription": [
+      "Creación de un simulador de un sistema de control mecánico complejo (por ejemplo, un péndulo invertido estabilizado o un vehículo de balanceo de dos ruedas) enteramente en C++.",
+      "El simulador resuelve en tiempo real las ecuaciones diferenciales del sistema utilizando algoritmos numéricos optimizados (como Runge-Kutta de 4º orden) e implementa un controlador (PID u óptimo) para mantener la estabilidad del sistema simulado.",
+      "Se emplean estructuras de datos avanzadas para representar el estado del sistema (vectores, matrices) y manejo eficiente de memoria para asegurar alto rendimiento sin lags.",
+      "Este proyecto refleja dominio de algoritmos matemáticos, optimización de código C++ y simulación de sistemas físicos, demostrando capacidad para modelar y resolver problemas de ingeniería mediante software de alto nivel.",
+      "Objetivo Técnico: Simular el comportamiento dinámico de sistemas físicos mediante controladores computacionales avanzados.",
+      "La documentación incluye gráficos generados por la simulación, videos y un informe técnico detallando las ecuaciones y decisiones de diseño."
+    ],
+    "technologies": ["C++17", "STL", "Eigen (biblioteca)", "Algoritmos Numéricos (Runge-Kutta)", "Control PID", "Programación Concurrente"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "monitor-arduino-python-cpp",
+    "title": "Monitor en Tiempo Real con Arduino (C++) y GUI en Python",
+    "category": "Integración C++/Python",
+    "projectType": "integration",
+    "languages": ["C++", "Python"],
+    "thumbnailUrl": "/assets/thumbnails/monitor-arduino-python-cpp-thumb.jpg",
+    "shortDescription": "Sistema integrado que combina un Arduino (C++) para adquisición de datos de sensores y una aplicación Python con GUI para visualización y control en tiempo real.",
+    "longDescription": [
+      "Este proyecto combina un sistema embebido en C++ con una aplicación de escritorio en Python.",
+      "Un Arduino con C++ adquiere datos de múltiples sensores (por ejemplo, temperatura, luz, posición) y los envía por serial USB, mientras que una aplicación Python (usando PyQt5/Tkinter o Matplotlib) recibe y muestra esos datos en gráficos en tiempo real, permitiendo también enviar comandos de control de vuelta al Arduino.",
+      "Objetivos: demostrar integración de dos lenguajes – el firmware en C++ y la interfaz en Python – para un sistema de supervisión tipo SCADA básico.",
+      "La presentación incluye capturas de la GUI en funcionamiento junto al hardware Arduino.",
+      "Este proyecto evidencia la capacidad para lograr compatibilidad entre un microcontrolador en C++ y una herramienta de alto nivel en Python, habilidad muy útil en IoT y sistemas embebidos modernos, reforzando conocimientos en arquitectura cliente-servidor local y diseño de interfaces."
+    ],
+    "technologies": ["Arduino (C++)", "Python", "PyQt5/Tkinter", "Matplotlib", "pySerial", "UART", "GUI", "IoT"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "vision-artificial-opencv-deteccion-objetos",
+    "title": "Visión artificial con OpenCV (detección de objetos)",
+    "category": "Python",
+    "projectType": "single_language",
+    "languages": ["Python"],
+    "thumbnailUrl": "/assets/thumbnails/vision-artificial-opencv-deteccion-objetos-thumb.jpg",
+    "shortDescription": "Sistema de detección de objetos o colores mediante cámara web o Raspberry Pi Cam, utilizando OpenCV en Python para tomar decisiones basadas en la detección.",
+    "longDescription": [
+      "Un proyecto enfocado en la robótica y automatización con visión usando Python. [cite: 299]",
+      "Desarrollo de un sistema que mediante una cámara web o Raspberry Pi Cam detecta ciertos objetos o colores y toma decisiones en base a ello. [cite: 300]",
+      "Implementación de detección de formas o seguimiento de color con la biblioteca OpenCV en Python. [cite: 301]",
+      "Un caso práctico incluye la detección de una pelota de cierto color y el envío de comandos a un actuador (como un servomotor en Arduino) para mover una cámara o un pequeño robot apuntando hacia la pelota. [cite: 302]",
+      "Objetivos: mostrar dominio en procesamiento de imágenes (filtro de colores, detección de bordes, contornos), algoritmos de visión (por ejemplo, cascadas Haar o detección con Deep Learning pre-entrenado) y la integración con sistemas físicos. [cite: 303]",
+      "Este proyecto resalta competencias en Python para aplicaciones de visión, muy relevantes en robótica moderna como la inspección o guiado por visión. [cite: 307]"
+    ],
+    "technologies": ["Python", "OpenCV", "NumPy", "Raspberry Pi (opcional)", "Microcontrolador (opcional)"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "simulacion-navegacion-robotica-ros-python",
+    "title": "Simulación de navegación robótica con ROS (Python)",
+    "category": "Robótica con Python",
+    "projectType": "single_language",
+    "languages": ["Python"],
+    "thumbnailUrl": "/assets/thumbnails/simulacion-navegacion-robotica-ros-python-thumb.jpg",
+    "shortDescription": "Simulación de un robot móvil (TurtleBot) en Gazebo, realizando navegación autónoma básica mediante nodos ROS en Python y algoritmos de planificación de rutas.",
+    "longDescription": [
+      "Un proyecto orientado a robótica autónoma donde se usa ROS (Robot Operating System) con nodos en Python. [cite: 308]",
+      "Simulación de un robot móvil (tipo TurtleBot) en un entorno Gazebo, realizando navegación autónoma básica. [cite: 309]",
+      "Objetivos técnicos: configurar la simulación de sensores (LIDAR, odometría) y motores, implementar nodos ROS en Python que ejecuten algoritmos de planificación de rutas (p. ej. A* o evitación de obstáculos) y lograr que el robot virtual se desplace desde un punto A hasta B esquivando obstáculos. [cite: 310]",
+      "Este proyecto evidenciará experiencia en software de robótica profesional, integración de Python con simuladores y conceptos avanzados de navegación, muy acorde a la Ingeniería Mecatrónica moderna. [cite: 314]"
+    ],
+    "technologies": ["Python", "ROS (Melodic/Noetic)", "Gazebo", "RViz", "Algoritmos de Planificación de Rutas (A*)", "LIDAR", "Odometría"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "simulador-cinematico-brazo-robotico-python",
+    "title": "Simulador cinemático de brazo robótico (Python)",
+    "category": "Robótica con Python",
+    "projectType": "single_language",
+    "languages": ["Python"],
+    "thumbnailUrl": "/assets/thumbnails/simulador-cinematico-brazo-robotico-python-thumb.jpg",
+    "shortDescription": "Aplicación en Python que modela la cinemática directa e inversa de un brazo robótico articulado, permitiendo visualizar la posición del efector final o calcular ángulos articulares.",
+    "longDescription": [
+      "Desarrollo en Python de una aplicación que modela la cinemática directa e inversa de un brazo robótico articulado (ej. 3 DOF en plano o modelo 3D sencillo). [cite: 315, 316]",
+      "El programa permite ingresar parámetros (ángulos articulares) y visualizar la posición resultante del efector final, o ingresar una posición deseada y calcular los ángulos necesarios. [cite: 317]",
+      "Objetivos técnicos: aplicar conocimientos de matemática de robots (matrices de transformación DH), resolver la cinemática inversa (posiblemente usando métodos numéricos o simbólicos con librerías como Sympy) e ilustrarlo gráficamente. [cite: 318]",
+      "Este proyecto demuestra comprensión profunda de la cinemática de manipuladores y habilidad para traducir teoría a código Python, acompañándolo de visualizaciones atractivas. [cite: 322]"
+    ],
+    "technologies": ["Python", "Matplotlib", "Pygame/VPython (opcional)", "Sympy (opcional)", "Cinemática de Robots"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "analisis-datos-sensores-prediccion-python",
+    "title": "Análisis de datos de sensores y predicción (Python)",
+    "category": "Python",
+    "projectType": "single_language",
+    "languages": ["Python"],
+    "thumbnailUrl": "/assets/thumbnails/analisis-datos-sensores-prediccion-python-thumb.jpg",
+    "shortDescription": "Análisis de señales de sensores mecatrónicos usando Python, aplicando filtrado, análisis en frecuencia (FFT), y entrenamiento de modelos simples de machine learning para predicción.",
+    "longDescription": [
+      "Este proyecto aprovecha Python para el análisis y simulación de señales de sensores típicos en mecatrónica. [cite: 323]",
+      "Un ejemplo concreto es tomar datos de un acelerómetro/vibración de motor y aplicar filtrado y análisis en frecuencia para detectar posibles fallas o comportamientos anómalos. [cite: 324]",
+      "Objetivos técnicos: demostrar competencia en Python para tareas científicas: lectura de datasets de sensores, uso de NumPy/Pandas para cálculo de estadísticos, aplicar un Filtro de Kalman o transformada FFT para extraer información útil, e incluso entrenar un modelo simple de machine learning (p. ej. regresión o clasificación con scikit-learn) para predecir cuándo un valor excede un umbral. [cite: 325]",
+      "Aunque es un proyecto de software puro, está orientado a la mecatrónica predictiva (mantenimiento predictivo, análisis de vibraciones), mostrando la capacidad de explotar Python para extraer conocimiento de los datos que generan sistemas físicos. [cite: 329]"
+    ],
+    "technologies": ["Python", "NumPy", "Pandas", "SciPy (señales)", "Matplotlib/Seaborn", "Scikit-learn (opcional)", "Filtro de Kalman", "FFT", "Jupyter Notebook (opcional)"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "plataforma-iot-flask-python-javascript",
+    "title": "Plataforma IoT con Flask (Python) y Dashboard Web (JavaScript)",
+    "category": "Integración Python/JavaScript",
+    "projectType": "integration",
+    "languages": ["Python", "JavaScript"],
+    "thumbnailUrl": "/assets/thumbnails/plataforma-iot-flask-python-javascript-thumb.jpg",
+    "shortDescription": "Sistema IoT con un servidor web en Flask (Python) para recibir y almacenar datos de sensores, y una interfaz web interactiva (HTML/JavaScript) para visualización en tiempo real.",
+    "longDescription": [
+      "Este proyecto exhibe la integración de Python en el backend con un frontend web moderno, alineado a tendencias IoT. [cite: 331]",
+      "Consiste en un servidor web en Flask (Python) que recibe datos de sensores (enviados por Arduino/Raspberry Pi) y los almacena en una base de datos. [cite: 332]",
+      "Luego presenta esos datos en tiempo real a través de una interfaz web interactiva construida con HTML/JavaScript (gráficas, indicadores). [cite: 333]",
+      "La página web utiliza AJAX o WebSockets para consultar la API expuesta por Flask y dibujar gráficos dinámicos con Chart.js. [cite: 334, 335]",
+      "Objetivos: combinar Python en el servidor y JavaScript en el cliente para lograr un sistema completo de monitoreo web. [cite: 337]",
+      "Este proyecto integrador recalca la capacidad para desarrollar sistemas IoT completos, desde la obtención de datos hasta su visualización en la web. [cite: 340]"
+    ],
+    "technologies": ["Python", "Flask", "SQLAlchemy/MySQL (opcional)", "SQLite (opcional)", "JavaScript", "HTML5", "CSS3", "AJAX/WebSockets", "Chart.js/D3.js (opcional)", "API REST"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "control-pid-motor-dc-simulink",
+    "title": "Control PID de un motor DC en Simulink",
+    "category": "MATLAB/Simulink",
+    "projectType": "single_language",
+    "languages": ["MATLAB/Simulink"],
+    "thumbnailUrl": "/assets/thumbnails/control-pid-motor-dc-simulink-thumb.jpg",
+    "shortDescription": "Modelado de la planta de un motor DC y diseño de un controlador PID en Simulink para regular su velocidad o posición.",
+    "longDescription": [
+      "Un proyecto enfocado en control clásico, donde se modela la planta de un motor de corriente continua y se diseña un controlador PID para regular su velocidad o posición. [cite: 341]",
+      "En Simulink se arma el diagrama de bloques: modelo matemático del motor (ecuación diferencial o función de transferencia), la realimentación de la velocidad y el bloque PID ajustado para cumplir ciertos criterios (tiempo de subida, sobreimpulso, etc.). [cite: 342]",
+      "Objetivos técnicos: aplicar teoría de control automático en un entorno de simulación, tunear el PID (manualmente o con herramientas de MATLAB) y analizar la respuesta del sistema a perturbaciones o cambios de setpoint. [cite: 343]",
+      "Este proyecto es altamente relevante a mecatrónica (motores y controladores) y demuestra habilidad en MATLAB para resolver y visualizar un problema práctico de control. [cite: 347]"
+    ],
+    "technologies": ["MATLAB", "Simulink", "Control System Toolbox", "Simulink Scopes", "Simulink Control Design (opcional)"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "modelado-control-brazo-robotico-simulink",
+    "title": "Modelado y control de un brazo robótico en Simulink (Robot planar 2DOF)",
+    "category": "MATLAB/Simulink",
+    "projectType": "single_language",
+    "languages": ["MATLAB/Simulink"],
+    "thumbnailUrl": "/assets/thumbnails/modelado-control-brazo-robotico-simulink-thumb.jpg",
+    "shortDescription": "Simulación de un brazo robótico de dos o tres ejes en Simulink (opcionalmente Simscape Multibody) para probar estrategias de control de movimiento.",
+    "longDescription": [
+      "Utilizando Simulink (y opcionalmente Simscape Multibody), se crea una simulación de un brazo robótico de dos o tres ejes para probar estrategias de control de movimiento. [cite: 348]",
+      "Por ejemplo, un brazo planar de 2 GDL con motores de corriente continua y reducción, donde se implementa un control por realimentación (PID multivariable o control por realimentación de estado) para mover el efector final a una posición deseada. [cite: 349]",
+      "Objetivos técnicos: integrar un modelo mecánico (ecuaciones de dinámica o modelo importado de CAD a Simscape) con controladores simultáneos para cada articulación, y resolver la cinemática directa en tiempo real para monitorizar la posición alcanzada. [cite: 350]",
+      "Este proyecto demuestra cómo se aplica MATLAB/Simulink en robótica, desde el modelado físico hasta el control, muy alineado con un perfil de mecatrónica y robótica. [cite: 355]"
+    ],
+    "technologies": ["MATLAB", "Simulink", "Simscape Multibody (opcional)", "Control System Toolbox", "Stateflow (opcional)"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "simulacion-navegacion-robot-movil-matlab",
+    "title": "Simulación de navegación de un robot móvil en MATLAB",
+    "category": "MATLAB/Simulink",
+    "projectType": "single_language",
+    "languages": ["MATLAB/Simulink"],
+    "thumbnailUrl": "/assets/thumbnails/simulacion-navegacion-robot-movil-matlab-thumb.jpg",
+    "shortDescription": "Creación de un escenario 2D en MATLAB donde un robot móvil tipo diferencial navega evitando obstáculos utilizando la Robotics Toolbox.",
+    "longDescription": [
+      "Usando la Robotics Toolbox de MATLAB, se crea un escenario 2D donde un robot móvil (tipo diferencial) navega evitando obstáculos. [cite: 356]",
+      "Se genera un mapa de ocupación (matriz grid) con obstáculos, se implementa un algoritmo de planificación de ruta (A* o RRT) en MATLAB para hallar el camino óptimo, y luego se simula la trayectoria del robot siguiendo esa ruta con un controlador de movimiento. [cite: 357]",
+      "Objetivos técnicos: demostrar conocimientos de planificación y control de robots móviles en un ambiente de simulación rápido. [cite: 358]",
+      "Se puede implementar control de bajo nivel (leyes de navegación tipo follow-the-carrot o PID sobre la dirección). [cite: 360]",
+      "Este proyecto recalca la capacidad para usar MATLAB en problemas de robótica autónoma y algoritmos. [cite: 363]"
+    ],
+    "technologies": ["MATLAB", "Robotics System Toolbox", "Navigation Toolbox", "A*", "RRT", "Control PID"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "filtro-fusion-sensorial-imu-matlab",
+    "title": "Filtro de fusión sensorial (IMU) con MATLAB",
+    "category": "MATLAB/Simulink",
+    "projectType": "single_language",
+    "languages": ["MATLAB/Simulink"],
+    "thumbnailUrl": "/assets/thumbnails/filtro-fusion-sensorial-imu-matlab-thumb.jpg",
+    "shortDescription": "Combinación de lecturas de acelerómetro y giróscopo en MATLAB/Simulink para obtener una estimación estable de orientación mediante un Filtro de Kalman o complementario.",
+    "longDescription": [
+      "Enfocado en procesamiento de señales y automática, este proyecto trata sobre combinar lecturas de sensores como acelerómetro y giróscopo para obtener una estimación estable de orientación (ángulo de inclinación). [cite: 364]",
+      "Se implementa un Filtro de Kalman o un filtro complementario en Simulink/MATLAB que fusione los datos ruidosos del acelerómetro con los del giroscopio, logrando un estimador óptimo de ángulo. [cite: 365]",
+      "Objetivos técnicos: mostrar manejo de teorías de filtrado y su implementación práctica, análisis de señales con ruido, y validación del filtro frente a datos reales o simulados. [cite: 366]",
+      "Este proyecto enfatiza la utilidad de MATLAB no solo para control, sino también para fusionar sensores y mejorar mediciones. [cite: 370]"
+    ],
+    "technologies": ["MATLAB", "Simulink", "Filtro de Kalman", "Filtro Complementario", "Procesamiento de Señales", "MPU-6050 (datos)"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "control-hardware-in-the-loop-matlab-cpp",
+    "title": "Del simulador a la realidad (Control en hardware-in-the-loop MATLAB/C++)",
+    "category": "Integración MATLAB/C++",
+    "projectType": "integration",
+    "languages": ["MATLAB/Simulink", "C++"],
+    "thumbnailUrl": "/assets/thumbnails/control-hardware-in-the-loop-matlab-cpp-thumb.jpg",
+    "shortDescription": "Diseño de un controlador en Simulink y posterior generación de código C++ para validarlo en hardware Arduino, cerrando el ciclo de diseño virtual y pruebas físicas.",
+    "longDescription": [
+      "Este proyecto cierra el ciclo de diseño virtual y pruebas físicas, diseñando un controlador en Simulink para un sistema y luego pasando ese controlador al hardware Arduino para validarlo. [cite: 372, 373]",
+      "Se puede usar Simulink Support Package for Arduino para generar código C++ del controlador y cargarlo en un Arduino que controla un motor real, o realizar una simulación hardware-in-the-loop. [cite: 374, 375]",
+      "Objetivos: demostrar integración entre MATLAB/Simulink y un sistema embebido en C++, validando que las soluciones diseñadas en simulación funcionan en el mundo real con hardware. [cite: 378]",
+      "Este proyecto integrador evidencia una capacidad muy profesional: pasar “del modelo a la implementación”, reduciendo la brecha entre la simulación (MATLAB) y el prototipo físico (C++ en microcontrolador). [cite: 381]"
+    ],
+    "technologies": ["MATLAB", "Simulink", "Simulink Support Package for Arduino", "Embedded Coder", "C++", "Arduino", "Hardware-in-the-loop (HIL)"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "aplicacion-escritorio-scada-java-mysql",
+    "title": "Aplicación de escritorio tipo SCADA (Java + MySQL)",
+    "category": "Java",
+    "projectType": "single_language",
+    "languages": ["Java"],
+    "thumbnailUrl": "/assets/thumbnails/aplicacion-escritorio-scada-java-mysql-thumb.jpg",
+    "shortDescription": "Simulación de un SCADA sencillo con Java (JavaFX/Swing) para visualización y control de datos de sensores, con almacenamiento en MySQL.",
+    "longDescription": [
+      "Un proyecto orientado a la supervisión y control de variables, simulando un SCADA sencillo.",
+      "Una aplicación Java (usando JavaFX o Swing) que muestra en tiempo real datos de sensores industriales (temperatura, nivel, etc.), con gráficos y alarmas, y que permite al usuario enviar comandos de control.",
+      "Se puede simular la fuente de datos o leerlos desde un Arduino vía puerto serial si no se conecta a un PLC real.",
+      "Además, la aplicación puede guardar históricos en una base de datos MySQL para posterior análisis.",
+      "Objetivos técnicos: demostrar habilidades de Java en frontend de escritorio (creación de interfaces gráficas con tablas, gauges, gráficas) y en backend (conexión a base de datos con JDBC, hilos para adquisición continua de datos, manejo de eventos).",
+      "Este proyecto refleja experiencia en desarrollo de software de instrumentación/monitorización, conectando la programación con las necesidades de la automatización.",
+      "Prepara para trabajar con HMIs industriales y bases de datos, aprovechando el conocimiento de SQL."
+    ],
+    "technologies": ["Java SE", "JavaFX", "Swing", "JDBC", "MySQL", "SQLite (opcional)", "JFreeChart (opcional)", "Serial communication (javax.comm, opcional)"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "simulador-navegacion-algoritmo-busqueda-java",
+    "title": "Simulador de navegación y algoritmo de búsqueda (Java)",
+    "category": "Java",
+    "projectType": "single_language",
+    "languages": ["Java"],
+    "thumbnailUrl": "/assets/thumbnails/simulador-navegacion-algoritmo-busqueda-java-thumb.jpg",
+    "shortDescription": "Aplicación Java que representa un laberinto y utiliza algoritmos de búsqueda (A*, Dijkstra) para encontrar rutas óptimas, con visualización gráfica.",
+    "longDescription": [
+      "Un proyecto para destacar los conocimientos algorítmicos usando Java.",
+      "Creación de una aplicación que representa un laberinto o una cuadrícula con obstáculos, y programa un algoritmo de búsqueda de caminos (A*, Dijkstra) que encuentra la ruta óptima para que un robot virtual vaya desde un origen a un destino.",
+      "La interfaz Java Swing dibuja el grid, los obstáculos y marca el camino calculado.",
+      "Incluso se puede animar un “robot” (un círculo o ícono) recorriendo la ruta paso a paso.",
+      "Objetivos técnicos: implementar estructuras de datos y algoritmos en Java puro, visualizar el resultado en una interfaz gráfica, y relacionarlo con aplicaciones de robótica móvil (planificación de rutas óptimas).",
+      "Este proyecto, si bien es software, está directamente ligado a robótica y demuestra la capacidad para resolver problemas complejos con Java, uniendo lógica de backend con una representación visual."
+    ],
+    "technologies": ["Java", "Swing", "A* Algorithm", "Dijkstra's Algorithm", "Java Collections", "Threading (opcional para animación)"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "app-android-control-robotico-java",
+    "title": "Aplicación Android de control robótico (Java móvil)",
+    "category": "Java",
+    "projectType": "integration",
+    "languages": ["Java", "C++"],
+    "thumbnailUrl": "/assets/thumbnails/app-android-control-robotico-java-thumb.jpg",
+    "shortDescription": "App Android nativa en Java para controlar remotamente un robot (Arduino/ESP32) vía Bluetooth, con interfaz de usuario para envío de comandos y recepción de datos.",
+    "longDescription": [
+      "Este proyecto aprovecha la experiencia en Java para el desarrollo móvil.",
+      "Consiste en una app Android nativa (Java) que se conecta vía Bluetooth a un dispositivo Arduino o ESP32 montado en un robot, permitiendo controlarlo remotamente.",
+      "La interfaz incluye botones o un joystick virtual para mover un carrito robótico, y también recibe datos (como distancia de un sensor ultrasónico) para mostrarlos en pantalla.",
+      "Objetivos técnicos: demostrar conocimientos en desarrollo Android (Activities, UI/UX móvil), comunicación inalámbrica (Bluetooth SPP o Bluetooth Low Energy) y protocolo simple de comando/respuesta con un microcontrolador.",
+      "Se destaca la creación tanto de la app como del firmware del robot, mostrando integración multiplataforma (móvil + embebido)."
+    ],
+    "technologies": ["Android Studio (Java)", "Android SDK", "Bluetooth API (SPP/BLE)", "XML (Layouts)", "Arduino/ESP32 (para el robot)", "C++ (firmware robot)"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "simulador-trafico-inteligente-java",
+    "title": "Simulador de tráfico inteligente en Java",
+    "category": "Java",
+    "projectType": "single_language",
+    "languages": ["Java"],
+    "thumbnailUrl": "/assets/thumbnails/simulador-trafico-inteligente-java-thumb.jpg",
+    "shortDescription": "Simulación de una intersección con semáforos y flujo de vehículos en Java, utilizando hilos para concurrencia y lógica de control inteligente de semáforos.",
+    "longDescription": [
+      "Un proyecto orientado a automatización y concurrencia, donde se simula una intersección con semáforos y flujo de vehículos.",
+      "En Java se utilizan hilos (Threads) para representar vehículos llegando en distintas direcciones y semáforos cambiando de estados con temporizadores.",
+      "El sistema podría implementar lógica de control inteligente de semáforos (por ejemplo, prolongar la luz verde si hay cola de vehículos detectada).",
+      "Objetivos técnicos: exhibir capacidad de programación concurrente en Java (uso de Thread.sleep(), semáforos de sincronización, Runnable), así como diseño de algoritmos de control de tráfico.",
+      "Este proyecto demuestra la habilidad para trasladar conceptos de control a código Java de forma correcta, manteniendo hilos sincronizados y evitando condiciones de carrera."
+    ],
+    "technologies": ["Java", "Java Threads", "Swing/JavaFX (para visualización)", "Sincronización de Hilos"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "proyecto-integrado-java-cpp-coche-robotico",
+    "title": "Coche robótico con control Android (Bluetooth) (Java + C++)",
+    "category": "Integración Java/C++",
+    "projectType": "integration",
+    "languages": ["Java", "C++"],
+    "thumbnailUrl": "/assets/thumbnails/proyecto-integrado-java-cpp-coche-robotico-thumb.jpg",
+    "shortDescription": "Sistema completo de un coche robot controlado desde un smartphone Android (Java) vía Bluetooth, con el robot operado por Arduino (C++).",
+    "longDescription": [
+      "En este proyecto integrado se combinan conocimientos de Java y C++ para crear un sistema completo: un coche robot controlado desde un smartphone Android.",
+      "La aplicación móvil (Java) envía comandos vía Bluetooth a un Arduino en el robot, donde un programa en C++ mueve los motores según las instrucciones recibidas.",
+      "A su vez, el Arduino puede retornar datos (como distancia de un sensor) que la app muestra.",
+      "Objetivos: demostrar integración multiplataforma – un dispositivo embebido de bajo nivel con C++ y una aplicación Java de alto nivel – logrando compatibilidad y comunicación en tiempo real.",
+      "Este proyecto sintetiza habilidades en programación de microcontroladores, electrónica, y desarrollo de software móvil, destacando versatilidad."
+    ],
+    "technologies": ["Android (Java)", "Bluetooth", "Arduino (C++)", "HC-05 (Módulo Bluetooth)", "Control de Motores (Puente H)"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "dashboard-web-iot-javascript",
+    "title": "Dashboard web interactivo para IoT (JavaScript/HTML/CSS)",
+    "category": "JavaScript",
+    "projectType": "single_language",
+    "languages": ["JavaScript"],
+    "thumbnailUrl": "/assets/thumbnails/dashboard-web-iot-javascript-thumb.jpg",
+    "shortDescription": "Panel de control frontend en JavaScript puro para visualización de datos de sensores en tiempo real mediante gráficas y gauges atractivos.",
+    "longDescription": [
+      "Un proyecto enfocado en el front-end web, creando un panel de control visual para datos de sensores. [cite: 430]",
+      "Se desarrolla una página web que muestra la lectura de varios sensores en gráficas en tiempo real y gauges atractivos usando solo HTML/CSS/JS en el frontend. [cite: 431]",
+      "La llegada de datos se puede simular con JSON periódicos o conectarse a una API real. [cite: 432]",
+      "Objetivos técnicos: demostrar habilidades en JavaScript para manipulación del DOM, actualización dinámica de contenido (usando Fetch/AJAX para obtener nuevos datos cada segundo) y uso de librerías de visualización como Chart.js o D3.js. [cite: 433]",
+      "Este panel web demuestra la capacidad de crear interfaces de usuario profesionales y atractivas para sistemas mecatrónicos, complementando habilidades de backend/embebido con presentación de datos. [cite: 438]"
+    ],
+    "technologies": ["HTML5", "CSS3", "JavaScript (ES6+)", "Fetch API", "AJAX", "Chart.js", "D3.js (opcional)"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "simulacion-3d-robot-threejs",
+    "title": "Simulación 3D de un robot en el navegador (Three.js)",
+    "category": "JavaScript",
+    "projectType": "single_language",
+    "languages": ["JavaScript"],
+    "thumbnailUrl": "/assets/thumbnails/simulacion-3d-robot-threejs-thumb.jpg",
+    "shortDescription": "Escena 3D interactiva en el navegador con Three.js (WebGL) para simular un dispositivo mecánico, como un brazo robótico articulado.",
+    "longDescription": [
+      "Un proyecto para exhibir destreza en gráficos web, consistente en usar Three.js (biblioteca de JavaScript para WebGL) y construir una sencilla escena 3D que simule un dispositivo mecánico. [cite: 439]",
+      "Se puede simular un brazo robótico articulado 3D cuyos ángulos se pueden ajustar con controles deslizantes en la página, o un robot móvil visto en perspectiva moviéndose en un plano. [cite: 440]",
+      "Objetivos técnicos: combinar conocimientos de mecatrónica (estructura de un robot) con programación gráfica, manejando modelos 3D, luces, cámaras y animaciones en JavaScript. [cite: 441]",
+      "Este proyecto impresionará por lo visual y demuestra la capacidad para crear entornos de simulación personalizados, reforzando la comprensión de la geometría de robots. [cite: 445, 446]"
+    ],
+    "technologies": ["Three.js", "WebGL", "JavaScript", "HTML5", "CSS3", "Modelos 3D (.obj/.gltf opcional)"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "app-web-control-simulacion-js-puro",
+    "title": "Aplicación web interactiva de control y simulación (JavaScript puro)",
+    "category": "JavaScript",
+    "projectType": "single_language",
+    "languages": ["JavaScript"],
+    "thumbnailUrl": "/assets/thumbnails/app-web-control-simulacion-js-puro-thumb.jpg",
+    "shortDescription": "Aplicación web en JavaScript que permite controlar parámetros de un sistema simulado (péndulo, circuito RC) y visualiza la respuesta en tiempo real en un canvas 2D.",
+    "longDescription": [
+      "Un proyecto práctico donde el navegador no solo muestra datos sino que permite control y simula la respuesta de un sistema. [cite: 448]",
+      "La página cuenta con controles (slider, botones) que ajustan parámetros de un sistema simulado – como la velocidad de un motor o el ángulo de un péndulo invertido – y un área gráfica que actualiza la simulación en tiempo real. [cite: 449]",
+      "Se codifican las ecuaciones del sistema (péndulo, circuito RC) en JavaScript y se usa un bucle de tiempo (setInterval) para evolucionar el estado, dibujando los resultados en un canvas 2D. [cite: 450]",
+      "Objetivos técnicos: demostrar maestría en JavaScript para lógica de simulación (cálculo numérico, integración simple de ecuaciones) y en manipulación gráfica Canvas/SVG para animar la respuesta a las acciones del usuario. [cite: 451]",
+      "Este proyecto convierte el conocimiento teórico en una herramienta web educativa, ideal para ilustrar conceptos de control o física. [cite: 456]"
+    ],
+    "technologies": ["JavaScript (ES6+)", "HTML5 Canvas", "SVG (opcional)", "p5.js (opcional)"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "servidor-api-nodejs-iot",
+    "title": "Servidor y API en Node.js para IoT (JavaScript en backend)",
+    "category": "JavaScript",
+    "projectType": "single_language",
+    "languages": ["JavaScript"],
+    "thumbnailUrl": "/assets/thumbnails/servidor-api-nodejs-iot-thumb.jpg",
+    "shortDescription": "Servidor IoT en Node.js con Express.js y Socket.io para recibir datos de dispositivos y redistribuirlos a clientes web en tiempo real.",
+    "longDescription": [
+      "Un proyecto para mostrar manejo de JavaScript del lado del servidor (Node.js) aplicado a IoT. [cite: 457]",
+      "Se implementa un pequeño servidor IoT en Node.js que reciba datos de dispositivos (por WebSockets o HTTP) y los redistribuya a clientes web en tiempo real. [cite: 458]",
+      "Puede ser una alternativa al proyecto integrado con Python/Flask, pero realizado completamente en JavaScript. [cite: 459]",
+      "Objetivos técnicos: configurar un servidor Node con un framework ligero (Express.js), establecer comunicación en tiempo real usando Socket.io y posiblemente almacenar datos en una base NoSQL (MongoDB). [cite: 460]",
+      "Este proyecto encaja con el perfil IoT/mecatrónico al ser la pieza de servidor que conecta dispositivos físicos con interfaces. [cite: 464]"
+    ],
+    "technologies": ["Node.js", "Express.js", "Socket.io", "MongoDB (opcional)", "WebSockets", "HTTP"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "plataforma-johnny-five-nodebots",
+    "title": "Proyecto integrado (JavaScript + C++/Arduino): Plataforma Johnny-Five (NodeBots)",
+    "category": "Integración JavaScript/C++",
+    "projectType": "integration",
+    "languages": ["JavaScript", "C++"],
+    "thumbnailUrl": "/assets/thumbnails/plataforma-johnny-five-nodebots-thumb.jpg",
+    "shortDescription": "Control de hardware Arduino (sensores y actuadores) en tiempo real desde código JavaScript (Node.js) utilizando la plataforma Johnny-Five.",
+    "longDescription": [
+      "Este proyecto integrador une JavaScript con la electrónica de Arduino de forma directa usando la plataforma Johnny-Five. [cite: 466, 467]",
+      "Un script Node.js en una PC/Raspberry Pi controla los pines de un Arduino conectado (con firmware Firmata estándar) para leer sensores y mover actuadores. [cite: 468]",
+      "Se puede montar un robot pequeño o un brazo sencillo y programar su lógica en JavaScript, incluso integrando un módulo web para comandarlo remotamente. [cite: 469]",
+      "Objetivos: demostrar integración de alto nivel (JavaScript) y bajo nivel (C++ en Arduino) mediante protocolos como Firmata. [cite: 470, 471]",
+      "Este proyecto deja claro que se puede unir el mundo web con el mundo embebido de manera innovadora, utilizando JavaScript para robótica e IoT. [cite: 475]"
+    ],
+    "technologies": ["Johnny-Five", "Node.js", "Arduino UNO", "Firmata", "C++ (Firmware Arduino)", "Sensores", "Actuadores", "Socket.io (opcional para control web)"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "sistema-web-monitoreo-iot-php-mysql",
+    "title": "Sistema web de monitoreo IoT (PHP/MySQL + gráficas)",
+    "category": "PHP",
+    "projectType": "single_language",
+    "languages": ["PHP"],
+    "thumbnailUrl": "/assets/thumbnails/sistema-web-monitoreo-iot-php-mysql-thumb.jpg",
+    "shortDescription": "Aplicación web full-stack en PHP que recibe datos de sensores (Arduino/ESP8266), los almacena en MySQL y los muestra en gráficas y tablas.",
+    "longDescription": [
+      "Un proyecto full-stack tradicional donde PHP actúa en el servidor para almacenar y mostrar datos de sensores.",
+      "Se desarrolla una aplicación web en PHP que recibe (mediante solicitudes HTTP POST) los datos enviados por un Arduino o ESP8266 (temperatura, humedad, etc.) y los guarda en una base de datos MySQL.",
+      "Luego, la app ofrece una página con tablas y gráficas históricas de esos datos, e incluso paneles en vivo actualizados con AJAX.",
+      "Objetivos técnicos: demostrar manejo de PHP para lógica de servidor (procesamiento de requests, consultas SQL) y generación de contenido dinámico (HTML con datos actuales), así como conocimientos de bases de datos y seguridad básica (validación, sanitización de inputs).",
+      "Este proyecto destaca la capacidad para construir la infraestructura web que complementa dispositivos físicos."
+    ],
+    "technologies": ["PHP 8+", "MySQL", "Apache/Nginx", "HTML5", "CSS3", "JavaScript", "AJAX", "Chart.js"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "plugin-wordpress-iot-domotica",
+    "title": "Plugin de WordPress para IoT/domótica",
+    "category": "PHP",
+    "projectType": "single_language",
+    "languages": ["PHP"],
+    "thumbnailUrl": "/assets/thumbnails/plugin-wordpress-iot-domotica-thumb.jpg",
+    "shortDescription": "Desarrollo de un plugin personalizado para WordPress que interactúa con un sistema mecatrónico, mostrando datos de sensores o enviando comandos.",
+    "longDescription": [
+      "Aprovechando la experiencia con WordPress, este proyecto consiste en desarrollar un plugin personalizado que extienda la funcionalidad de un sitio WP para interactuar con un sistema mecatrónico.",
+      "Por ejemplo, un plugin que crea un widget en el dashboard de WordPress mostrando en tiempo real lecturas de un sensor remoto, o que permite al usuario enviar comandos a un Arduino conectado al servidor.",
+      "Objetivos técnicos: aprender y demostrar conocimientos de la arquitectura de WordPress (PHP), creación de shortcodes o widgets, seguridad y estructuras de un plugin.",
+      "Este proyecto muestra una aplicación novedosa de PHP en el contexto de mecatrónica, integrando un sistema web popular con la automatización."
+    ],
+    "technologies": ["PHP (OOP opcional)", "WordPress CMS", "WordPress Plugin API", "Shortcodes", "Widgets API", "HTTP API (opcional)"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "control-remoto-arduino-web-php-serial",
+    "title": "Control remoto de Arduino vía web (PHP serial)",
+    "category": "PHP",
+    "projectType": "integration",
+    "languages": ["PHP", "C++"],
+    "thumbnailUrl": "/assets/thumbnails/control-remoto-arduino-web-php-serial-thumb.jpg",
+    "shortDescription": "Página web en PHP con controles para enviar comandos a un Arduino conectado al servidor vía puerto serial, permitiendo manejo de hardware en tiempo real.",
+    "longDescription": [
+      "Un proyecto enfocado en control, complementando el de monitoreo. La idea es crear una página web con botones/controles que, al ser accionados, envíen comandos a un Arduino conectado al servidor para manejar un dispositivo físico en tiempo real.",
+      "En ausencia de Ethernet/WiFi shield, esto se logra ejecutando PHP en el servidor que escribe en el puerto serial al que está conectado el Arduino.",
+      "Objetivo técnico: permitir que desde cualquier navegador en la red/internet se pueda controlar un hardware.",
+      "Este proyecto destaca la capacidad para lograr teleoperación de sistemas físicos usando tecnologías web clásicas."
+    ],
+    "technologies": ["PHP", "Serial Port Communication (PHP extensions o exec)", "Arduino", "HTML Forms"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "api-restful-panel-admin-laravel-php",
+    "title": "API RESTful y panel admin con Laravel (PHP)",
+    "category": "PHP",
+    "projectType": "single_language",
+    "languages": ["PHP"],
+    "thumbnailUrl": "/assets/thumbnails/api-restful-panel-admin-laravel-php-thumb.jpg",
+    "shortDescription": "Desarrollo de una API REST con Laravel para una aplicación IoT, con un panel administrativo para visualización y gestión de datos.",
+    "longDescription": [
+      "Para exhibir el manejo de frameworks modernos PHP, se podría desarrollar una pequeña API REST usando Laravel que sirva como backend de una aplicación IoT.",
+      "Creación de endpoints (ej. /sensors, /readings) con Laravel manejando rutas, controladores y modelos Eloquent para base de datos.",
+      "Adicionalmente, un panel administrativo (con Laravel Blade o Vue.js integrado) para visualizar la información de forma amigable.",
+      "Objetivos técnicos: mostrar conocimiento de Laravel (migraciones, MVC, Eloquent, autenticación básica) y buenas prácticas de desarrollo web.",
+      "Este proyecto eleva el perfil en desarrollo web, mostrando manejo de frameworks empresariales para gestionar información de dispositivos físicos."
+    ],
+    "technologies": ["PHP", "Laravel 9+", "MySQL", "Eloquent ORM", "API REST", "Blade Templates", "Vue.js (opcional)", "Bootstrap (opcional)"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  },
+  {
+    "id": "plataforma-web-completa-control-iot-php-arduino-js",
+    "title": "Plataforma web completa de control IoT (PHP + Arduino + JavaScript)",
+    "category": "Integración PHP/JavaScript/C++",
+    "projectType": "integration",
+    "languages": ["PHP", "C++", "JavaScript"],
+    "thumbnailUrl": "/assets/thumbnails/plataforma-web-completa-control-iot-php-arduino-js-thumb.jpg",
+    "shortDescription": "Sistema IoT integral con Arduino/ESP8266 (C++) enviando datos a un servidor PHP, y una interfaz web JavaScript para visualización y control por el usuario.",
+    "longDescription": [
+      "Este proyecto integrador combina varios elementos del stack: un Arduino/ESP8266 en C++ enviando datos a un servidor PHP, y una interfaz web JavaScript para el usuario final.",
+      "Por ejemplo, un sistema de riego inteligente: sensores de humedad en Arduino envían lecturas a un script PHP (vía HTTP REST).",
+      "El servidor PHP guarda datos en MySQL y, según lógicas definidas, puede enviar comandos de vuelta para activar actuadores en el Arduino.",
+      "El usuario dispone de una página web (HTML/CSS/JS) donde ve el estado y puede manualmente controlar el sistema.",
+      "Objetivos: demostrar una solución IoT integral, con múltiples lenguajes colaborando: firmware embebido, backend web y frontend dinámico.",
+      "Este proyecto valida la capacidad para juntar todo el stack técnico para resolver un problema real de ingeniería."
+    ],
+    "technologies": ["PHP", "MySQL", "Arduino/ESP32 (C++)", "HTTP", "JavaScript", "HTML5", "CSS3", "AJAX"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  }
+]
