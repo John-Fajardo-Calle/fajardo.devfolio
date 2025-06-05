@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>fajardo.devfolio - Redirigiendo...</title>
+  <script type="text/javascript">
+    var basePath = "/fajardo.devfolio/";
+    sessionStorage.redirect = window.location.pathname + window.location.search + window.location.hash;
+
+    window.location.replace(window.location.origin + basePath);
+  </script>
+</head>
+<body>
+<p>Si no eres redirigido automáticamente, por favor <a id="redirect-link-404" href="#">haz clic aquí para ir a la página principal</a>.</p>
+<script type="text/javascript">
+  var basePathForLink = "/fajardo.devfolio/";
+  document.getElementById('redirect-link-404').href = window.location.origin + basePathForLink;
+</script>
+</body>
+</html>
