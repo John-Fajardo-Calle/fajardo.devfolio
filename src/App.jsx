@@ -9,11 +9,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import ProjectDetail from './pages/ProjectDetail';
 
-
-const basename = '/';
-
 function App() {
-    const basename = '/';
+    const basename = import.meta.env.DEV ? '/' : '/fajardo.devfolio/';
     return (
         <BrowserRouter basename={basename}>
             <div className="flex flex-col min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
