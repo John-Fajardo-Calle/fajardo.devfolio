@@ -1,44 +1,47 @@
-# fajardo.devfolio - John Fajardo's Professional Portfolio
+# fajardo.devfolio - My Professional Portfolio
 
-fajardo.devfolio is a modern, responsive professional portfolio website for John Fajardo, showcasing his profile as a Backend Developer and Mechatronics Engineer. It serves as a technical portfolio, curriculum vitae presentation, and a personal showcase for job opportunities.
+Welcome to fajardo.devfolio! This is my personal professional portfolio, built to effectively showcase my profile as a Backend Developer and Mechatronics Engineer. It serves as my technical showcase, CV presentation, and a platform for new career opportunities.
 
-The site is built with React, Vite, and TailwindCSS, featuring dynamic language switching (Spanish/English), dark/light mode support with persistence, a filterable project gallery, and a functional contact form.
+The site is developed with React, Vite, and TailwindCSS. It's fully responsive, bilingual (Spanish/English), features dynamic theme (dark/light mode) switching with persistence, a filterable project gallery with animations, and a functional contact system.
 
-**Live Demo (GitHub Pages):** `https://TU_USUARIO_GITHUB.github.io/fajardo.devfolio/`
-*(Replace `TU_USUARIO_GITHUB` with your GitHub username)*
+**Live Demo (GitHub Pages):** `https://john-fajardo-calle.github.io/fajardo.devfolio/`
 
-## Features
+## Key Features
 
-* **Professional Profile Presentation:** Clearly showcases John Fajardo's skills and experience.
-* **Bilingual Content:** Fully supports English and Spanish, with dynamic language switching (using `react-i18next`).
-* **Dark/Light Mode:** Theme toggling with persistence in `localStorage` (using React Context API).
-* **Responsive Design:** Adapts to all device sizes (desktop, tablet, mobile).
-* **Project Portfolio:**
-    * Gallery of technical projects with filtering capabilities (by main programming language and integration projects).
+* **Professional Profile Presentation:** Clearly presents my skills, experience, and engineering background.
+* **Bilingual Content (ES/EN):** Full support for Spanish and English, with dynamic language switching powered by `react-i18next` and `i18next-browser-languagedetector` for persistence.
+* **Dark/Light Mode:** User-selectable theme toggling with the preference saved in `localStorage`, implemented using React Context API.
+* **Fully Responsive Design:** Adapts seamlessly to all device sizes (desktop, tablets, and mobile).
+* **Interactive Project Portfolio:**
+    * A gallery showcasing my technical projects, filterable by main programming language and integration project types.
     * Detailed view for each project.
-    * Animated transitions for project cards when filtering (using Framer Motion).
-    * Filter states persist across page refreshes and language changes (using `sessionStorage`).
-* **Curriculum Vitae:**
-    * Visually presented CV page.
-    * Option to download CV in PDF (ES/EN), dynamically updated with language change.
-* **Contact Options:**
-    * Functional contact form using EmailJS.
-    * Direct WhatsApp contact button.
-* **Animated Text Transitions:** Subtle "card flip" text animations on language change for UI elements (using a custom `FlippableText` component).
+    * Smooth, animated transitions for project cards when filters are applied, powered by Framer Motion.
+    * Applied filter states are persisted across page refreshes and language changes using `sessionStorage`.
+* **Comprehensive Curriculum Vitae:**
+    * A visually organized CV page.
+    * PDF versions of my CV (in Spanish and English) are available for download, with the download option updating dynamically based on the selected site language.
+* **Direct Contact Options:**
+    * A functional contact form that sends emails directly using EmailJS.
+    * A quick contact button via WhatsApp.
+* **Engaging UI/UX:**
+    * Subtle "card flip" text animations on language change for key UI elements, enhancing the user experience.
+    * Custom favicons and a polished Navbar logo.
 
 ## Tech Stack
 
 * **Frontend:** React, Vite, JavaScript
 * **Styling:** TailwindCSS
-* **Routing:** React Router DOM
+* **Routing:** React Router DOM v6
+* **State Management:** React Context API, `useState`, `useEffect`, `useMemo`, `useRef`
 * **Internationalization (i18n):** `react-i18next`, `i18next-browser-languagedetector`
-* **Animations:** Framer Motion (for project card filtering)
+* **Animations:** Framer Motion
 * **Email Service:** EmailJS
-* **Build Tool:** Vite
+* **Build Tool & Dev Server:** Vite
 
 ## Project Structure
 
-A brief overview of the project's folder structure:
+Here’s a brief overview of the project's folder structure:
+
 
 <pre>
 fajardo.devfolio/
@@ -66,62 +69,71 @@ fajardo.devfolio/
 </pre>
 
 
-## Setup and Installation
+## Getting Started: Setup and Installation
+
+To get a local copy up and running, follow these simple steps:
 
 1.  **Clone the repository:**
-    `git clone https://github.com/TU_USUARIO_GITHUB/fajardo.devfolio.git`
-    `cd fajardo.devfolio`
-2.  **Install dependencies:**
-    `npm install`
-    *(Or `yarn install` if you prefer yarn)*
-3.  **Configure EmailJS Credentials (Recommended: Use Environment Variables):**
-    * The contact form uses EmailJS. For security and best practice, you should use environment variables for your EmailJS credentials.
-    * Create a `.env` file in the root of your project:
-        ```
+    ```bash
+    git clone [https://github.com/john-fajardo-calle/fajardo.devfolio.git](https://github.com/john-fajardo-calle/fajardo.devfolio.git)
+    cd fajardo.devfolio
+    ```
+2.  **Install NPM packages:**
+    ```bash
+    npm install
+    ```
+    *(Or `yarn install` if you use Yarn)*
+
+3.  **Configure EmailJS Credentials (Using Environment Variables):**
+    The contact form relies on EmailJS. For security and proper configuration, use environment variables for your EmailJS credentials.
+
+    * Create a `.env` file in the root of your project.
+    * Add your EmailJS credentials to the `.env` file like this:
+        ```env
         VITE_EMAILJS_SERVICE_ID=YOUR_SERVICE_ID
         VITE_EMAILJS_TEMPLATE_ID=YOUR_TEMPLATE_ID
         VITE_EMAILJS_USER_ID=YOUR_PUBLIC_KEY
         ```
-    * Replace `YOUR_SERVICE_ID`, `YOUR_TEMPLATE_ID`, and `YOUR_PUBLIC_KEY` with your actual EmailJS credentials.
-    * Update `src/services/email.js` to use these environment variables:
+    * Replace `YOUR_SERVICE_ID`, `YOUR_TEMPLATE_ID`, and `YOUR_PUBLIC_KEY` with your actual credentials from your EmailJS dashboard.
+    * The `src/services/email.js` file is already set up to use these environment variables:
         ```javascript
         // src/services/email.js
-        import emailjs from 'emailjs-com';
-
+        // ...
         const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
         const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
         const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID;
-
-        export const sendEmail = (templateParams) => {
-          // ... (resto de la función sendEmail)
-          return emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID);
-        };
+        // ...
         ```
-    * **Important:** Add `.env` to your `.gitignore` file to prevent committing your secret keys.
+    * **Crucial:** Ensure your `.env` file is listed in your `.gitignore` file to prevent accidentally committing your secret keys.
 
 4.  **Run the development server:**
-    `npm run dev`
-    The site should now be running on `http://localhost:5173` (or another port if 5173 is busy).
+    ```bash
+    npm run dev
+    ```
+    The site will be available at `http://localhost:5173` (or the next available port).
 
 ## Available Scripts
 
-* `npm run dev`: Starts the development server.
-* `npm run build`: Builds the app for production to the `dist` folder.
-* `npm run lint`: Lints the project files (if ESLint is configured).
-* `npm run preview`: Serves the production build locally for preview.
+In the project directory, you can run:
 
-## Deployment (GitHub Pages)
+* **`npm run dev`**: Starts the development server with Hot Module Replacement (HMR).
+* **`npm run build`**: Bundles the app for production into the `dist` folder.
+* **`npm run lint`**: Lints the project files using ESLint (based on your `package.json`).
+* **`npm run preview`**: Serves the production build locally to preview before deployment.
+* **`npm run deploy`**: Builds the project and deploys it to GitHub Pages using the `gh-pages` branch (this script includes `predeploy` which runs `npm run build`).
 
-This project is configured for deployment on GitHub Pages.
-1.  Ensure `homepage` in `package.json` and `base` in `vite.config.js` are correctly set to `https://TU_USUARIO_GITHUB.github.io/fajardo.devfolio/` and `/fajardo.devfolio/` respectively.
-2.  A `404.html` file is included in the root and a corresponding script in `src/main.jsx` to handle SPA routing (deep linking and refresh issues) on GitHub Pages.
-3.  Build the project: `npm run build`.
-4.  Deploy the contents of the `dist` folder to your `gh-pages` branch (or configure GitHub Pages to serve from `main` branch /docs folder after build).
+## Deployment to GitHub Pages
 
-## Contributing
+This project is configured for easy deployment to GitHub Pages:
 
-If you plan to have others contribute:
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please make sure to update tests as appropriate.
-
+1.  Ensure the `homepage` field in `package.json` is set to `https://john-fajardo-calle.github.io/fajardo.devfolio/`.
+2.  Ensure the `base` property in `vite.config.js` is set to `/fajardo.devfolio/`.
+3.  Ensure the `basename` prop for `<BrowserRouter>` in `src/App.jsx` is set to `/fajardo.devfolio/` for production builds (this is handled conditionally).
+4.  A `404.html` file (placed in `public/`) and a redirect script in `src/main.jsx` are implemented to handle client-side routing correctly on GitHub Pages (addressing issues with deep linking and page refreshes).
+5.  To deploy, simply run:
+    ```bash
+    npm run deploy
+    ```
+    Then, configure your GitHub repository's Pages settings to deploy from the `gh-pages` branch.
 
 ---
