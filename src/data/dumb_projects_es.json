@@ -1,0 +1,16 @@
+[
+  {
+    "id": "uni-project-1",
+    "title": "Trabajo de Robótica",
+    "category": "Universidad",
+    "projectType": "single_language",
+    "languages": ["C++"],
+    "thumbnailUrl": "",
+    "shortDescription": "Una pequeña práctica de robótica con Arduino.",
+    "longDescription": ["Este es un ejemplo sencillo de un proyecto universitario."],
+    "technologies": ["C++", "Arduino"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  }
+]

@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import projectsDataES from '../data/projects_es.json';
 import projectsDataEN from '../data/projects_en.json';
+import dumbProjectsDataES from '../data/dumb_projects_es.json';
+import dumbProjectsDataEN from '../data/dumb_projects_en.json';
 
 const MAIN_PROGRAMMING_LANGUAGES = ["C++", "Python", "JavaScript", "Java", "MATLAB/Simulink", "PHP"];
 const MAX_TEMPORARY_FILTERS = 3;
@@ -34,6 +36,8 @@ const Projects = () => {
 
     const [allProjects, setAllProjects] = useState([]);
     const [filteredProjects, setFilteredProjects] = useState([]);
+    const [allDumbProjects, setAllDumbProjects] = useState([]);
+    const [filteredDumbProjects, setFilteredDumbProjects] = useState([]);
 
     const [viewMode, setViewMode] = useState(() =>
         sessionStorage.getItem(SESSION_STORAGE_KEYS.VIEW_MODE) || 'language'
@@ -72,8 +76,9 @@ const Projects = () => {
 
         const currentLang = i18n.language;
         const currentProjectData = currentLang === 'es' ? projectsDataES : projectsDataEN;
+        const currentDumbData = currentLang === 'es' ? dumbProjectsDataES : dumbProjectsDataEN;
         setAllProjects(currentProjectData);
-
+        setAllDumbProjects(currentDumbData);
         initialLoadProcessedForLang.current.add(currentLang);
         prevLangRef.current = currentLang;
 
@@ -103,6 +108,7 @@ const Projects = () => {
         const defineTextKeysAndDefaults = () => {
             const keys = {
                 pageTitle: { i18nKey: 'projects.title', defaultText: 'Mis Proyectos' },
+                dumbProjectsTitle: { i18nKey: 'projects.dumbProjectsTitle', defaultText: 'Proyectos Tontos' },
                 filterAll: { i18nKey: 'projects.filterAll', defaultText: 'Todos' },
                 filterIntegrations: { i18nKey: 'projects.filterIntegrations', defaultText: 'Integraciones' },
                 filterProgrammingLanguages: { i18nKey: 'projects.filterProgrammingLanguages', defaultText: 'Lenguajes de Programación' },
@@ -148,21 +154,26 @@ const Projects = () => {
 
 
     useEffect(() => {
-        if (!allProjects.length && ready === false) return;
+        if ((!allProjects.length && ready === false) && (!allDumbProjects.length && ready === false)) return;
 
         let projects = [];
+        let dumb = [];
         if (viewMode === 'language') {
             projects = activeMainFilter === 'all' ? allProjects : allProjects.filter(p => getProjectMainLanguages(p).includes(activeMainFilter));
+            dumb = activeMainFilter === 'all' ? allDumbProjects : allDumbProjects.filter(p => getProjectMainLanguages(p).includes(activeMainFilter));
         } else {
             const integrations = allProjects.filter(p => isIntegrationProject(p));
+            const dumbIntegrations = allDumbProjects.filter(p => isIntegrationProject(p));
             projects = activeMainFilter === 'all_integrations' ? integrations : integrations.filter(p => getProjectMainLanguages(p).includes(activeMainFilter));
+            dumb = activeMainFilter === 'all_integrations' ? dumbIntegrations : dumbIntegrations.filter(p => getProjectMainLanguages(p).includes(activeMainFilter));
         }
         if (temporaryFilters.length > 0) {
             projects = projects.filter(project => temporaryFilters.every(filter => project.technologies?.includes(filter)));
+            dumb = dumb.filter(project => temporaryFilters.every(filter => project.technologies?.includes(filter)));
         }
         setFilteredProjects(projects);
-    }, [allProjects, viewMode, activeMainFilter, temporaryFilters, ready]);
-
+        setFilteredDumbProjects(dumb);
+    }, [allProjects, allDumbProjects, viewMode, activeMainFilter, temporaryFilters, ready]);
 
     const handleMainFilterOrViewChange = (filterName) => {
         const isActiveInCurrentView =
@@ -347,6 +358,53 @@ const Projects = () => {
                     {renderFlippableContent('noProjectsMessage', 'projects.noProjectsToDisplay')}
                 </p>
             )}
+
+
+            <div className="mt-16 text-center mb-10">
+                <div className={titleContainerStyle}>
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
+                        {renderFlippableContent('dumbProjectsTitle', 'projects.dumbProjectsTitle')}
+                    </h2>
+                </div>
+            </div>
+
+            <motion.div
+                layout
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6"
+            >
+                <AnimatePresence initial={false} mode="popLayout">
+                    {filteredDumbProjects.map((project) => (
+                        <motion.div
+                            key={project.id}
+                            layout
+                            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{
+                                opacity: 0,
+                                scale: 0.7,
+                                y: -30,
+                                transition: { duration: CARD_ANIMATION_DURATION * 0.5 }
+                            }}
+                            transition={{
+                                duration: CARD_ANIMATION_DURATION,
+                                ease: [0.4, 0, 0.2, 1]
+                            }}
+                        >
+                            <ProjectCard
+                                project={project}
+                                onTechnologyTagClick={handleTechnologyTagClick}
+                            />
+                        </motion.div>
+                    ))}
+                </AnimatePresence>
+            </motion.div>
+
+            {filteredDumbProjects.length === 0 && allDumbProjects.length > 0 && (
+                <p className="text-center text-gray-600 dark:text-gray-400 mt-8">
+                    {renderFlippableContent('noProjectsMessage', 'projects.noProjectsToDisplay')}
+                </p>
+            )}
+
         </div>
     );
 };
