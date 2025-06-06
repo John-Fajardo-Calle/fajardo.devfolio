@@ -40,7 +40,7 @@ const CV = () => {
     const { t, i18n } = useTranslation();
     const currentLang = i18n.language;
 
-    const cvBasePath = `${import.meta.env.BASE_URL}assets/cv/`;
+    const cvBasePath = 'assets/cv/';
     const cvFile = currentLang === 'es'
         ? `${cvBasePath}CV-John_Fajardo-ES.pdf`
         : `${cvBasePath}CV-John_Fajardo-EN.pdf`;
