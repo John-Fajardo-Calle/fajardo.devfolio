@@ -1,0 +1,16 @@
+[
+  {
+    "id": "uni-project-1",
+    "title": "Robotics Lab Assignment",
+    "category": "University",
+    "projectType": "single_language",
+    "languages": ["C++"],
+    "thumbnailUrl": "",
+    "shortDescription": "A small robotics assignment using Arduino.",
+    "longDescription": ["This is a simple example of a university project."],
+    "technologies": ["C++", "Arduino"],
+    "repoUrl": null,
+    "liveUrl": null,
+    "images": []
+  }
+]
