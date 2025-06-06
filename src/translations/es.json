@@ -104,6 +104,7 @@
   },
   "projects": {
     "title": "Mis Proyectos",
+    "dumbProjectsTitle": "Proyectos Tontos",
     "filterAll": "Todos",
     "filterTitle": "Filtrar por categoría:",
     "filterIntegrations": "Integraciones",
