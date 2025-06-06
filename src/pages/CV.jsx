@@ -40,9 +40,11 @@ const CV = () => {
     const { t, i18n } = useTranslation();
     const currentLang = i18n.language;
 
+    const cvBasePath = `${import.meta.env.BASE_URL}assets/cv/`;
     const cvFile = currentLang === 'es'
-        ? '/assets/cv/CV-John_Fajardo-ES.pdf'
-        : '/assets/cv/CV-John_Fajardo-EN.pdf';
+        ? `${cvBasePath}CV-John_Fajardo-ES.pdf`
+        : `${cvBasePath}CV-John_Fajardo-EN.pdf`;
+
     const downloadButtonText = currentLang === 'es' ? t('cv.downloadES', 'Descargar CV en Español') : t('cv.downloadEN', 'Descargar CV en Inglés');
 
 
