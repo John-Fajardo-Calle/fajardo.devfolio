@@ -40,7 +40,9 @@ const CV = () => {
     const { t, i18n } = useTranslation();
     const currentLang = i18n.language;
 
-    const cvFile = currentLang === 'es' ? '/assets/cv/JohnFajardo-CV-ES.pdf' : '/assets/cv/JohnFajardo-CV-EN.pdf'; // [cite: 5, 119]
+    const cvFile = currentLang === 'es'
+        ? '/assets/cv/CV-John_Fajardo-ES.pdf'
+        : '/assets/cv/CV-John_Fajardo-EN.pdf';
     const downloadButtonText = currentLang === 'es' ? t('cv.downloadES', 'Descargar CV en Español') : t('cv.downloadEN', 'Descargar CV en Inglés');
 
 
