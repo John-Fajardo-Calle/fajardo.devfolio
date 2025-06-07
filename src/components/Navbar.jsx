@@ -30,14 +30,13 @@ const Navbar = () => {
                     <div className="flex-shrink-0">
                         <Link to="/" className="flex items-center" aria-label="Página de inicio">
                             <img
-                                src={logoSrc} // <--- USA LA VARIABLE CORREGIDA AQUÍ
+                                src={logoSrc}
                                 alt={t('navbar.logoAlt', 'Logo de fajardo.devfolio')}
                                 style={{ height: '55px', width: 'auto' }}
                             />
                         </Link>
                     </div>
 
-                    {/* El resto de tu Navbar (enlaces, controles, menú móvil) permanece igual */}
                     <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 items-center space-x-8">
                         {navLinksData.map((linkInfo) => (
                             <NavLink
@@ -82,7 +81,6 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Menú Desplegable Móvil (tu código existente) */}
             {isMobileMenuOpen && (
                 <div className="md:hidden border-t border-gray-200 dark:border-gray-700" id="mobile-menu">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">

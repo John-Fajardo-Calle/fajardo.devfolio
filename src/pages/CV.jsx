@@ -186,9 +186,9 @@ const CV = () => {
             {Object.entries(skillsData).map(([key, skillCategory]) => (
                 <CVSection
                     key={key}
-                    title={skillCategory.title} // El título ya viene traducido desde la definición de skillsData
+                    title={skillCategory.title}
                     items={skillCategory.items}
-                    icon={skillCategory.icon || <CogIcon />} // Icono por defecto si no se especifica
+                    icon={skillCategory.icon || <CogIcon />}
                 />
             ))}
 
