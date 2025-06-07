@@ -15,7 +15,7 @@
       "La documentación técnica detalla la arquitectura del motor, incluyendo diagramas UML y ejemplos de consultas, y se pueden incluir análisis de rendimiento."
     ],
     "technologies": ["C++17", "STL", "Multihilo", "Árbol B+", "Gestión de Memoria Manual", "fstream", "RAII", "Punteros Inteligentes"],
-    "repoUrl": null,
+    "repoUrl": "https://github.com/John-Fajardo-Calle/bonsaidb",
     "liveUrl": null,
     "images": []
   },
