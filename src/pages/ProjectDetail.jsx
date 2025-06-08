@@ -137,11 +137,13 @@ const ProjectDetail = () => {
                     )}
                 </header>
 
-                <img
-                    src={project.images && project.images.length > 0 ? project.images[0] : mainThumbnailUrl}
-                    alt={t('projects.mainImageAlt', 'Imagen principal del proyecto {{title}}', { title: project.title })}
-                    className="w-full h-auto max-h-[500px] object-contain bg-gray-100 dark:bg-gray-700"
-                />
+                <div className="w-full max-w-3xl mx-auto bg-gray-100 dark:bg-gray-700 aspect-square overflow-hidden">
+                    <img
+                        src={project.images && project.images.length > 0 ? project.images[0] : mainThumbnailUrl}
+                        alt={t('projects.mainImageAlt', 'Imagen principal del proyecto {{title}}', { title: project.title })}
+                        className="w-full h-full object-cover"
+                    />
+                </div>
 
                 <div className="p-6 sm:p-8">
                     <section className="mb-8 prose prose-lg dark:prose-invert max-w-none">
