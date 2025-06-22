@@ -1,9 +1,8 @@
 import emailjs from 'emailjs-com';
 
-const SERVICE_ID = 'service_xvweu6j';
-const TEMPLATE_ID = 'template_5obxpes';
-const USER_ID = 'y9CrMWmUZdvrLDvRw';
-
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID;
 
 export const sendEmail = (templateParams) => {
 
