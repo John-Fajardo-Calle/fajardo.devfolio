@@ -3,15 +3,17 @@ import PropTypes from 'prop-types';
 
 const FlippableText = ({ oldText, newText, isFlipped, duration = 600, className = '' }) => {
     const componentRootStyle = {
-        perspective: '1000px',
+        perspective: '1500px',
         display: 'inline-block',
         verticalAlign: 'baseline',
     };
 
 
     const cardStyle = {
-        transition: `transform ${duration / 1000}s`,
+        transition: `transform ${duration / 1000}s cubic-bezier(0.45, 0, 0.55, 1)`,
         transformStyle: 'preserve-3d',
+        transformOrigin: 'center',
+        willChange: 'transform',
         transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
         display: 'inline-grid',
     };
