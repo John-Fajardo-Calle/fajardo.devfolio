@@ -11,7 +11,6 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import ProjectDetail from './pages/ProjectDetail';
 
-
 function AnimatedRoutes() {
     const location = useLocation();
     const isMobile = useIsMobile();

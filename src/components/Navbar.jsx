@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import useIsMobile from '../hooks/useIsMobile';
 import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ThemeToggle from './ThemeToggle';
@@ -8,6 +9,7 @@ import LanguageSwitcher from './LanguageSwitcher';
 const Navbar = () => {
     const { t } = useTranslation();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const isMobile = useIsMobile();
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -69,8 +71,8 @@ const Navbar = () => {
                                 aria-controls="mobile-menu"
                                 aria-expanded={isMobileMenuOpen}
                                 aria-label={t('navbar.toggleMobileMenu', 'Alternar menú móvil')}
-                                animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}
-                                transition={{ duration: 0.2 }}
+                                animate={isMobile ? { rotate: isMobileMenuOpen ? 90 : 0 } : false}
+                                transition={isMobile ? { duration: 0.2 } : undefined}
                             >
                                 <span className="sr-only">{t('navbar.openMenu', 'Abrir menú principal')}</span>
                                 {isMobileMenuOpen ? (
@@ -84,26 +86,27 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <AnimatePresence>
-            {isMobileMenuOpen && (
-                <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="md:hidden border-t border-gray-200 dark:border-gray-700" id="mobile-menu"
-                >
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        {navLinksData.map((linkInfo) => (
-                            <NavLink
-                                key={linkInfo.to}
-                                to={linkInfo.to}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className={({ isActive }) =>
-                                    `block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                                        isActive
-                                            ? 'bg-blue-600 text-white dark:bg-blue-500'
-                                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+            {isMobile && (
+                <AnimatePresence>
+                    {isMobileMenuOpen && (
+                        <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="md:hidden border-t border-gray-200 dark:border-gray-700" id="mobile-menu"
+                        >
+                            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                                {navLinksData.map((linkInfo) => (
+                                    <NavLink
+                                    key={linkInfo.to}
+                                    to={linkInfo.to}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className={({ isActive }) =>
+                                        `block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                                            isActive
+                                                ? 'bg-blue-600 text-white dark:bg-blue-500'
+                                                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
                                     }`
                                 }
                             >
@@ -117,9 +120,10 @@ const Navbar = () => {
                             <ThemeToggle />
                         </div>
                     </div>
-                </motion.div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             )}
-            </AnimatePresence>
         </nav>
     );
 };
