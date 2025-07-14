@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import useIsMobile from '../hooks/useIsMobile';
+import getAssetUrl from '../utils/getAssetUrl';
 import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ThemeToggle from './ThemeToggle';
@@ -23,8 +24,8 @@ const Navbar = () => {
         { to: '/contact', textKey: 'navbar.contact', defaultText: 'Contacto' },
     ];
 
-    const logoFilename = "fajardo.devfolio_copia.ico";
-    const logoSrc = `${import.meta.env.BASE_URL}${logoFilename}`;
+    const logoSrc = getAssetUrl('fajardo.devfolio_copia.ico');
+
 
     return (
         <nav className="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 transition-colors duration-300">
