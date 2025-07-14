@@ -2,12 +2,15 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
+import getAssetUrl from '../utils/getAssetUrl';
 
 const ProjectCard = ({ project, onTechnologyTagClick }) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
 
-    const thumbnailUrl = project.thumbnailUrl || `https://via.placeholder.com/400x250?text=${encodeURIComponent(project.title)}`;
+    const thumbnailUrl = project.thumbnailUrl
+        ? getAssetUrl(project.thumbnailUrl)
+        : `https://via.placeholder.com/400x250?text=${encodeURIComponent(project.title)}`;
 
     const handleNavigateToDetails = (e) => {
         if (e.target.closest('button.technology-tag') || e.target.closest('a.external-link')) {

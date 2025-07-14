@@ -5,6 +5,7 @@ import FlippableText from '../components/FlippableText';
 
 import projectsDataES from '../data/projects_es.json';
 import projectsDataEN from '../data/projects_en.json';
+import getAssetUrl from '../utils/getAssetUrl';
 
 const ANIMATION_DURATION = 600;
 
@@ -105,7 +106,9 @@ const ProjectDetail = () => {
         );
     }
 
-    const mainThumbnailUrl = project.thumbnailUrl || `https://via.placeholder.com/800x450?text=${encodeURIComponent(project.title)}`;
+    const mainThumbnailUrl = project.thumbnailUrl
+        ? getAssetUrl(project.thumbnailUrl)
+        : `https://via.placeholder.com/800x450?text=${encodeURIComponent(project.title)}`;
 
     return (
         <div className="container mx-auto px-4 py-8 sm:py-12">
@@ -139,7 +142,7 @@ const ProjectDetail = () => {
 
                 <div className="w-full max-w-3xl mx-auto bg-gray-100 dark:bg-gray-700 aspect-square overflow-hidden">
                     <img
-                        src={project.images && project.images.length > 0 ? project.images[0] : mainThumbnailUrl}
+                        src={project.images && project.images.length > 0 ? getAssetUrl(project.images[0]) : mainThumbnailUrl}
                         alt={t('projects.mainImageAlt', 'Imagen principal del proyecto {{title}}', { title: project.title })}
                         className="w-full h-full object-cover"
                     />
@@ -166,9 +169,9 @@ const ProjectDetail = () => {
                             </h2>
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                                 {project.images.slice(project.thumbnailUrl === project.images[0] ? 1 : 0).map((image, index) => (
-                                    <a key={index} href={image} target="_blank" rel="noopener noreferrer" className="block group">
-                                        <img
-                                            src={image}
+                                    <a key={index} href={getAssetUrl(image)} target="_blank" rel="noopener noreferrer" className="block group">
+                                    <img
+                                            src={getAssetUrl(image)}
                                             alt={t('projects.galleryImageAlt', 'Imagen {{index}} de la galería del proyecto {{title}}', { index: index + 1, title: project.title })}
                                             className="w-full h-48 object-cover rounded-md shadow-md transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg"
                                         />
