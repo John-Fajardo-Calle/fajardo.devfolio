@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import FlippableText from '../components/FlippableText';
-
+import FadingText from '../components/FadingText';
 
 const ANIMATION_DURATION = 600;
 
@@ -72,22 +71,21 @@ const About = () => {
 
     }, [i18n.language, ready, t, i18n]);
 
-    const renderFlippableContent = (textKey, elementType = 'p', className = "") => {
+    // Aquí SOLO FadingText para el contenido, NO para el bloque h1/h2/p
+    const renderFlippableText = (textKey, className = "") => {
         const props = flippableTexts[textKey];
-        const Tag = elementType;
-
         if (!props || props.frontText === undefined) {
             const config = textKeysConfig[textKey];
-            return <Tag className={className}>{t(config?.i18nKey, config?.defaultText || '')}</Tag>;
+            return t(config?.i18nKey, config?.defaultText || '');
         }
-
         return (
-            <FlippableText
-                oldText={<Tag className={className}>{props.frontText}</Tag>}
-                newText={<Tag className={className}>{props.backText}</Tag>}
+            <FadingText
+                oldText={props.frontText}
+                newText={props.backText}
                 isFlipped={props.isFlipped}
                 duration={ANIMATION_DURATION}
-                className="inline-block"
+                className={className}
+                mode="block" // <-- CLAVE PARA ABOUT, todo animado en flujo normal
             />
         );
     };
@@ -98,37 +96,46 @@ const About = () => {
     return (
         <div className="container mx-auto px-4 py-12 sm:py-16">
             <header className="text-center mb-12 md:mb-16">
-                {renderFlippableContent('pageTitle', 'h1', "text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 dark:text-white")}
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 dark:text-white">
+                    {renderFlippableText('pageTitle')}
+                </h1>
             </header>
 
             <div className="max-w-3xl mx-auto space-y-10 md:space-y-12">
                 <section>
-                    {renderFlippableContent('introSectionTitle', 'h2', "text-2xl sm:text-3xl font-semibold text-blue-600 dark:text-blue-400 mb-4")}
-
+                    <h2 className="text-2xl sm:text-3xl font-semibold text-blue-600 dark:text-blue-400 mb-4">
+                        {renderFlippableText('introSectionTitle')}
+                    </h2>
                     <div className="prose prose-lg dark:prose-invert max-w-none space-y-4 text-gray-700 dark:text-gray-300">
-                        {renderFlippableContent('introParagraph1', 'p')}
-                        {renderFlippableContent('introParagraph2', 'p')}
+                        <p>{renderFlippableText('introParagraph1')}</p>
+                        <p>{renderFlippableText('introParagraph2')}</p>
                     </div>
                 </section>
 
                 <section>
-                    {renderFlippableContent('journeySectionTitle', 'h2', "text-2xl sm:text-3xl font-semibold text-blue-600 dark:text-blue-400 mb-4")}
+                    <h2 className="text-2xl sm:text-3xl font-semibold text-blue-600 dark:text-blue-400 mb-4">
+                        {renderFlippableText('journeySectionTitle')}
+                    </h2>
                     <div className="prose prose-lg dark:prose-invert max-w-none space-y-4 text-gray-700 dark:text-gray-300">
-                        {renderFlippableContent('journeyParagraph1', 'p')}
+                        <p>{renderFlippableText('journeyParagraph1')}</p>
                     </div>
                 </section>
 
                 <section>
-                    {renderFlippableContent('philosophySectionTitle', 'h2', "text-2xl sm:text-3xl font-semibold text-blue-600 dark:text-blue-400 mb-4")}
+                    <h2 className="text-2xl sm:text-3xl font-semibold text-blue-600 dark:text-blue-400 mb-4">
+                        {renderFlippableText('philosophySectionTitle')}
+                    </h2>
                     <div className="prose prose-lg dark:prose-invert max-w-none space-y-4 text-gray-700 dark:text-gray-300">
-                        {renderFlippableContent('philosophyParagraph1', 'p')}
+                        <p>{renderFlippableText('philosophyParagraph1')}</p>
                     </div>
                 </section>
 
                 <section className="text-center border-t border-gray-200 dark:border-gray-700 pt-10 mt-10">
-                    {renderFlippableContent('connectSectionTitle', 'h2', "text-2xl sm:text-3xl font-semibold text-blue-600 dark:text-blue-400 mb-4")}
+                    <h2 className="text-2xl sm:text-3xl font-semibold text-blue-600 dark:text-blue-400 mb-4">
+                        {renderFlippableText('connectSectionTitle')}
+                    </h2>
                     <div className="prose prose-lg dark:prose-invert max-w-none mx-auto mb-6 text-gray-700 dark:text-gray-300">
-                        {renderFlippableContent('connectParagraph', 'p')}
+                        <p>{renderFlippableText('connectParagraph')}</p>
                     </div>
                     <div className="flex justify-center space-x-6">
                         <a
@@ -137,7 +144,7 @@ const About = () => {
                             rel="noopener noreferrer"
                             className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors duration-300 text-lg font-medium"
                         >
-                            {renderFlippableContent('linkedinLinkText', 'span')}
+                            {renderFlippableText('linkedinLinkText', 'inline-block')}
                         </a>
                         <a
                             href={GITHUB_URL}
@@ -145,7 +152,7 @@ const About = () => {
                             rel="noopener noreferrer"
                             className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors duration-300 text-lg font-medium"
                         >
-                            {renderFlippableContent('githubLinkText', 'span')}
+                            {renderFlippableText('githubLinkText', 'inline-block')}
                         </a>
                     </div>
                 </section>

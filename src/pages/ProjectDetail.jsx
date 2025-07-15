@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import FlippableText from '../components/FlippableText';
+import FadingText from '../components/FadingText';
 
 import projectsDataES from '../data/projects_es.json';
 import projectsDataEN from '../data/projects_en.json';
@@ -23,6 +23,7 @@ const ProjectDetail = () => {
     const [project, setProject] = useState(null);
     const [loading, setLoading] = useState(true);
     const [flippableTitle, setFlippableTitle] = useState({ frontText: '', backText: '', isFlipped: false });
+
 
     const prevLangRef = useRef(i18n.language);
     const initialLoadDoneRef = useRef(false);
@@ -126,7 +127,7 @@ const ProjectDetail = () => {
                 </div>
 
                 <header className="p-6 pt-0 sm:p-8 sm:pt-2 text-center">
-                    <FlippableText
+                    <FadingText
                         oldText={<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">{flippableTitle.frontText}</h1>}
                         newText={<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">{flippableTitle.backText}</h1>}
                         isFlipped={flippableTitle.isFlipped}

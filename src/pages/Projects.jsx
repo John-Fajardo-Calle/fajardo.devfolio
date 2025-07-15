@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import ProjectCard from '../components/ProjectCard';
-import FlippableText from '../components/FlippableText';
+import FadingText from '../components/FadingText';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import projectsDataES from '../data/projects_es.json';
@@ -12,7 +12,7 @@ import dumbProjectsDataEN from '../data/dumb_projects_en.json';
 const MAIN_PROGRAMMING_LANGUAGES = ["C++", "Python", "JavaScript", "Java", "MATLAB/Simulink", "PHP"];
 const MAX_TEMPORARY_FILTERS = 3;
 const FLIP_ANIMATION_DURATION = 600;
-const CARD_ANIMATION_DURATION = 0.4;
+const CARD_ANIMATION_DURATION = 0.6;
 
 const SESSION_STORAGE_KEYS = {
     VIEW_MODE: 'projectsViewMode',
@@ -123,6 +123,7 @@ const Projects = () => {
 
         const textKeysConfig = defineTextKeysAndDefaults();
         const languageChanged = oldLang && oldLang !== currentLang;
+
         const needsUpdate = languageChanged || Object.keys(flippableTexts).length === 0 || languagesForIntegrationViewButtons.some(lang => !flippableTexts[`lang_int_${lang}`]);
 
         if (needsUpdate) {
@@ -222,7 +223,7 @@ const Projects = () => {
             isFlipped: false
         };
         return (
-            <FlippableText
+            <FadingText
                 oldText={content.frontText}
                 newText={content.backText}
                 isFlipped={content.isFlipped}
@@ -340,8 +341,9 @@ const Projects = () => {
                                 transition: { duration: CARD_ANIMATION_DURATION * 0.5 }
                             }}
                             transition={{
-                                duration: CARD_ANIMATION_DURATION,
-                                ease: [0.4, 0, 0.2, 1]
+                                type: 'spring',
+                                stiffness: 120,
+                                damping: 20
                             }}
                         >
                             <ProjectCard
@@ -386,8 +388,9 @@ const Projects = () => {
                                 transition: { duration: CARD_ANIMATION_DURATION * 0.5 }
                             }}
                             transition={{
-                                duration: CARD_ANIMATION_DURATION,
-                                ease: [0.4, 0, 0.2, 1]
+                                type: 'spring',
+                                stiffness: 120,
+                                damping: 20
                             }}
                         >
                             <ProjectCard

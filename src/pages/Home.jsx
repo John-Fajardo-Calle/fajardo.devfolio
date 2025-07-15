@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import FlippableText from "../components/FlippableText";
+import FadingText from "../components/FadingText";
 
 const TRANSLATION_KEYS = {
     GREETING: 'home.greeting',
@@ -39,6 +39,7 @@ const Home = () => {
             let hasLanguageChanged = oldLang !== currentLang;
 
             if (isInitialMountRef.current || hasLanguageChanged) {
+
                 Object.values(TRANSLATION_KEYS).forEach(key => {
                     const currentTextInNewLang = t(key);
 
@@ -96,7 +97,7 @@ const Home = () => {
             return t(textKey);
         }
         return (
-            <FlippableText
+            <FadingText
                 oldText={props.frontText}
                 newText={props.backText}
                 isFlipped={props.isFlipped}

@@ -26,7 +26,7 @@ const ProjectCard = ({ project, onTechnologyTagClick }) => {
     return (
         <div
             className="bg-white dark:bg-gray-800 rounded-lg shadow-[0_2px_6px_rgba(0,0,0,0.1)]
-                       overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl
+                       overflow-hidden transform transition-transform duration-500 ease-out hover:scale-105 hover:-translate-y-1 hover:shadow-2xl
                        flex flex-col h-full cursor-pointer p-6"
             onClick={handleNavigateToDetails}
             role="link"

@@ -3,9 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { sendEmail } from '../services/email';
 
 
-import FlippableText from './FlippableText';
-const ANIMATION_DURATION = 600;
-
 const ContactForm = () => {
     const { t } = useTranslation();
     const [formData, setFormData] = useState({

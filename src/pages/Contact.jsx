@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import FlippableText from '../components/FlippableText';
+import FadingText from '../components/FadingText';
 import ContactForm from '../components/ContactForm';
 
 const ANIMATION_DURATION = 600;
 
 const Contact = () => {
     const { t, i18n, ready } = useTranslation();
+
 
     const [flippableTexts, setFlippableTexts] = useState({});
     const prevLangRef = useRef(i18n.language);
@@ -36,6 +37,7 @@ const Contact = () => {
         const currentLang = i18n.language;
         const oldLang = prevLangRef.current;
         const isActualLanguageChange = initialLoadDoneRef.current && oldLang !== null && oldLang !== currentLang;
+
 
         const textsToUpdate = {};
         Object.entries(textKeysConfig).forEach(([stateKey, config]) => {
@@ -84,7 +86,7 @@ const Contact = () => {
             return <Tag className={className}>{t(config?.i18nKey, config?.defaultText || '')}</Tag>;
         }
         return (
-            <FlippableText
+            <FadingText
                 oldText={<Tag className={className}>{props.frontText}</Tag>}
                 newText={<Tag className={className}>{props.backText}</Tag>}
                 isFlipped={props.isFlipped}
