@@ -103,6 +103,7 @@ const Home = () => {
                 isFlipped={props.isFlipped}
                 duration={ANIMATION_DURATION}
                 className={defaultClasses}
+                mode="block"
             />
         );
     };

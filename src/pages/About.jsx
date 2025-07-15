@@ -71,7 +71,6 @@ const About = () => {
 
     }, [i18n.language, ready, t, i18n]);
 
-    // Aquí SOLO FadingText para el contenido, NO para el bloque h1/h2/p
     const renderFlippableText = (textKey, className = "") => {
         const props = flippableTexts[textKey];
         if (!props || props.frontText === undefined) {
@@ -85,7 +84,7 @@ const About = () => {
                 isFlipped={props.isFlipped}
                 duration={ANIMATION_DURATION}
                 className={className}
-                mode="block" // <-- CLAVE PARA ABOUT, todo animado en flujo normal
+                mode="block"
             />
         );
     };

@@ -228,13 +228,14 @@ const Projects = () => {
                 newText={content.backText}
                 isFlipped={content.isFlipped}
                 duration={FLIP_ANIMATION_DURATION}
-                className={className || "inline-block"}
+                className={className || "block"}
+                mode="block"
             />
         );
     };
 
     const titleContainerStyle = "inline-block transition-all duration-300 ease-out hover:shadow-[0_8px_16px_rgba(0,0,0,0.15)]";
-    const baseFilterButtonStyle = "px-4 py-2 text-sm font-medium rounded-lg shadow transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-gray-900 focus:ring-blue-500 focus:ring-opacity-75";
+    const baseFilterButtonStyle = "px-[1cm] py-2 text-sm font-medium rounded-lg shadow transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-gray-900 focus:ring-blue-500 focus:ring-opacity-75";
     const hoverStyle = "hover:shadow-[0_8px_16px_rgba(0,0,0,0.15)] hover:-translate-y-[3px]";
 
     const getButtonClasses = (filterValue, isActive) => {

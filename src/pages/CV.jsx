@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import FadingText from '../components/FadingText';
 import CVSection from '../components/CVSection';
 
 const BriefcaseIcon = () => (
@@ -38,14 +39,49 @@ const LanguageIcon = () => (
 
 const CV = () => {
     const { t, i18n } = useTranslation();
+    const ANIMATION_DURATION = 600;
+
+    const [titleState, setTitleState] = useState({ front: t('cv.title', 'Currículum Vitae'), back: t('cv.title', 'Currículum Vitae'), isFlipped: false });
+    const [downloadState, setDownloadState] = useState(() => {
+        const text = i18n.language === 'es' ? t('cv.downloadES', 'Descargar CV en Español') : t('cv.downloadEN', 'Descargar CV en Inglés');
+        return { front: text, back: text, isFlipped: false };
+    });
+
+    const prevLangRef = useRef(i18n.language);
+
     const currentLang = i18n.language;
+
+    useEffect(() => {
+        const oldLang = prevLangRef.current;
+        if (oldLang === i18n.language) return;
+
+        const newTitle = t('cv.title', 'Currículum Vitae');
+        const newDownload = i18n.language === 'es'
+            ? t('cv.downloadES', 'Descargar CV en Español')
+            : t('cv.downloadEN', 'Descargar CV en Inglés');
+
+        const oldTitle = i18n.getFixedT(oldLang)('cv.title', 'Currículum Vitae');
+        const oldDownload = oldLang === 'es'
+            ? i18n.getFixedT(oldLang)('cv.downloadES', 'Descargar CV en Español')
+            : i18n.getFixedT(oldLang)('cv.downloadEN', 'Descargar CV en Inglés');
+
+        setTitleState({ front: oldTitle, back: newTitle, isFlipped: true });
+        setDownloadState({ front: oldDownload, back: newDownload, isFlipped: true });
+
+        prevLangRef.current = i18n.language;
+
+        const timeout = setTimeout(() => {
+            setTitleState({ front: newTitle, back: newTitle, isFlipped: false });
+            setDownloadState({ front: newDownload, back: newDownload, isFlipped: false });
+        }, ANIMATION_DURATION);
+
+        return () => clearTimeout(timeout);
+    }, [i18n.language, t, i18n]);
 
     const cvBasePath = `${import.meta.env.BASE_URL}assets/cv/`;
     const cvFile = currentLang === 'es'
         ? `${cvBasePath}CV-John_Fajardo-ES.pdf`
         : `${cvBasePath}CV-John_Fajardo-EN.pdf`;
-
-    const downloadButtonText = currentLang === 'es' ? t('cv.downloadES', 'Descargar CV en Español') : t('cv.downloadEN', 'Descargar CV en Inglés');
 
 
     const experienceData = [
@@ -153,9 +189,14 @@ const CV = () => {
     return (
         <div className="container mx-auto px-4 py-8">
             <div className="flex flex-col sm:flex-row justify-between items-center mb-10">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 sm:mb-0">
-                    {t('cv.title', 'Currículum Vitae')}
-                </h1>
+                <FadingText
+                    oldText={<h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 sm:mb-0">{titleState.front}</h1>}
+                    newText={<h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 sm:mb-0">{titleState.back}</h1>}
+                    isFlipped={titleState.isFlipped}
+                    duration={ANIMATION_DURATION}
+                    className="block"
+                    mode="block"
+                />
                 <a
                     href={cvFile}
                     download
@@ -164,7 +205,14 @@ const CV = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
-                    {downloadButtonText}
+                    <FadingText
+                        oldText={<span>{downloadState.front}</span>}
+                        newText={<span>{downloadState.back}</span>}
+                        isFlipped={downloadState.isFlipped}
+                        duration={ANIMATION_DURATION}
+                        className="block"
+                        mode="block"
+                    />
                 </a>
             </div>
 

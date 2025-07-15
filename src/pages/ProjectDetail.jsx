@@ -132,7 +132,8 @@ const ProjectDetail = () => {
                         newText={<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">{flippableTitle.backText}</h1>}
                         isFlipped={flippableTitle.isFlipped}
                         duration={ANIMATION_DURATION}
-                        className="inline-block"
+                        className="block"
+                        mode="block"
                     />
                     {project.category && (
                         <p className="text-lg text-blue-500 dark:text-blue-400 font-semibold mt-2">
